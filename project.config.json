@@ -48,8 +48,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/couponwriteoff/couponwriteoff",
-					"pathName": "pages/couponwriteoff/couponwriteoff",
+					"name": "pages/promote/promote",
+					"pathName": "pages/promote/promote",
 					"query": "",
 					"scene": null
 				}

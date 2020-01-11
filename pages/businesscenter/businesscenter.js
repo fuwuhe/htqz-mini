@@ -7,7 +7,6 @@ Page({
     background: ""
   },
   onLoad: function() {
-    console.log(getApp().globalData.merchants_id)
     var that = this;
     wx.request({
       url: util.Baseurl + '/merchants/center',
@@ -18,7 +17,6 @@ Page({
         'content-type': 'application/json' // 默认值
       },
       success:function(res){
-        console.log(res)
         if(res.data.code == 0){
           wx.showToast({
             title: res.data.msg,
@@ -26,7 +24,6 @@ Page({
             duration: 1000
           })
         }else{
-          console.log(res.data.data.image)
           that.setData({
             shopname:res.data.data.name,
             background: res.data.data.image
@@ -36,7 +33,6 @@ Page({
     })
   },
   Navtowriteoff: function() {
-    console.log(1)
     wx.navigateTo({
       url: '/pages/businesswriteoffmng/businesswriteoffmng',
     })
@@ -46,7 +42,7 @@ Page({
     wx.scanCode({
       onlyFromCamera: true,
       success(res) {
-        console.log(res)
+        
       }
     })
   }

@@ -45,9 +45,9 @@ Page({
               numbers: resdata[i].bankaccount,
               id: resdata[i].id,
               branchbank: resdata[i].branchbank,
+              logo: resdata[i].ico,
             })
           }
-          console.log(list)
           that.setData({
             cardlist: list
           })

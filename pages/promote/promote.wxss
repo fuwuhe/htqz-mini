@@ -139,6 +139,7 @@
   border-radius: 50rpx;
   font-weight: bold;
   text-shadow: 1rpx 1rpx 1rpx 2rpx #eee;
+  letter-spacing: 1rpx
 }
 
 .cover {

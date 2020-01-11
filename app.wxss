@@ -45,7 +45,7 @@ page{
   line-height: 80rpx;
   border-radius: 50rpx;
   color: #fff;
-  margin: 300rpx auto;
+  margin: 320rpx auto 200rpx;
 }
 .widthbtn{
   width: 550rpx;

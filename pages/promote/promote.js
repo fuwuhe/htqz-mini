@@ -3,8 +3,8 @@ const util = require('../../utils/util.js')
 const app = getApp()
 Page({
   data: {
-    invitenum: 2,
-    successnum: 3,
+    invitenum: 0,
+    successnum: 0,
     active: "",
     imagePath:"",
     maskHidden:false,
@@ -19,9 +19,7 @@ Page({
         token:wx.getStorageSync('token')
       },
       success:function(res){
-        console.log(res)
         if(res.data.code == 1){
-          console.log(res.data.data.qrocde)
           that.setData({
             qrcode: res.data.data.qrocde
           })
@@ -69,17 +67,29 @@ Page({
       });
     }, 3000)
   },
-  onShareAppMessage:function(){
-    this.Closelayer();
+  Inviteresult:function(){
+    var that = this;
     wx.request({
-      url: util.Baseurl +'/distribution/popularize',
-      data:{
+      url: util.Baseurl + '/distribution/popularize',
+      data: {
         token: wx.getStorageSync('token')
       },
-      success:function(res){
-        console.log(res)
-      }
+      success: function (res) {
+        if(res.data.code == 1){
+          that.setData({
+            invitenum: res.data.data.ycount,
+            successnum: res.data.data.xcount,
+          })
+        }
+      } 
     })
+  },
+  onShow:function(){
+    this.Inviteresult()
+  },
+  onShareAppMessage:function(){
+    this.Closelayer();
+    this.Inviteresult();
   },
   //canvas 生成海报
   CreateCanvas:function(){
@@ -94,7 +104,7 @@ Page({
         wx.getImageInfo({
           src: that.data.qrcode,
           success: function (re) {
-            context.drawImage(re.path, 97.5, 444, 180, 180);
+            context.drawImage(re.path, 104, 452, 167, 167);
             context.draw();
             setTimeout(function () {
               wx.canvasToTempFilePath({
@@ -107,7 +117,7 @@ Page({
                   });
                 },
                 fail: function (res) {
-                  console.log(res);
+                  
                 }
               });
             }, 1000);
@@ -149,8 +159,6 @@ Page({
           confirmColor: '#333',
           success: function (res) {
             if (res.confirm) {
-              console.log('用户点击确定');
-              /* 该隐藏的隐藏 */
               that.setData({
                 maskHidden: false
               })

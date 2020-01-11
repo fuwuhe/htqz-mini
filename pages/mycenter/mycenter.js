@@ -41,9 +41,9 @@ Page({
   onLoad: function() {    
     var that = this;
     app.TestFun();
-    if (getApp().globalData.phonenum != ''){
+    if (wx.getStorageSync('phonenum') != ''){
       that.setData({
-        phonenum: util.PhonenumEncrypt(getApp().globalData.phonenum)
+        phonenum: util.PhonenumEncrypt(wx.getStorageSync('phonenum'))
       })
     }
   },
@@ -54,7 +54,6 @@ Page({
         title: '温馨提示',
         content: '该功能需要您的授权',
         success(res) {
-          console.log(res)
           if (res.confirm) {
             wx.navigateTo({
               url: '/pages/authoriziation/authoriziation?from=center',
@@ -92,13 +91,13 @@ Page({
               code: resp.code
             },
             success: function (res) {
-              console.log(res)
               if (res.data.code == 1) {
                 if (res.data.data.phoneNumber){
                   that.setData({
                     phonenum: util.PhonenumEncrypt(res.data.data.phoneNumber)
                   })
                   getApp().globalData.phonenum = res.data.data.phoneNumber;
+                  wx.setStorageSync('phonenum', res.data.data.phoneNumber)
                   wx.request({
                     url: util.Baseurl + '/User/bind_mobile',
                     data:{
@@ -106,7 +105,7 @@ Page({
                       mobile: res.data.data.phoneNumber
                     },
                     success:function(suc){
-                       console.log(suc)
+
                     }
                   })
                 }                
