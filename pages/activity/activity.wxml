@@ -42,7 +42,7 @@
                <image src="{{item.recordsrc}}"></image>
                <view class="rightcon">
                  <view class="lineone">
-                   <view class="name">{{item.name}}</view>
+                   <view class="name">{{item.name?item.name:''}}</view>
                    <view class="price">已经支付 ￥{{item.price}}</view>
                  </view>
                  <view class="linetwo">
@@ -57,8 +57,7 @@
       </view>      
     </view>    
     <view class="sectip">
-       <text>注：点任一链接抢购成功后</text> 
-       <text>可享受所有活动商家优惠</text>
+       <image src="/images/font@2x.png"></image>
     </view>
     <view class="couponlist">
       <view bindtap="Click2coupondetail" wx:for="{{coupenlist}}"  wx:key="index" wx:for-item="coupen" data-id="{{coupen.id}}" data-sts="{{coupen.status}}">

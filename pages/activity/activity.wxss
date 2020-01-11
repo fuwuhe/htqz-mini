@@ -157,16 +157,18 @@ page {
 
 .sectip {
   margin: 20rpx auto;
-  font-family: 'MFLiHei_Noncommercial-Regular';
-  width: 536rpx;
+  width: 670rpx;
+  height: 168rpx;
   background: #fff;
-  padding: 40rpx 67rpx;
-  color: #ca0618;
-  font-size: 36rpx;
-  font-weight: bold;
+  position: relative;
 }
-.sectip text{
-  display: block;
+.sectip image{
+  width: 536rpx;
+  height: 83rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
 }
 
 .titleimg {

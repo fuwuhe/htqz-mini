@@ -61,8 +61,9 @@ const Num2time = (num) => {
   var m = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
   var d = (date.getDate() + 1 < 10 ? '0' + date.getDate() : date.getDate()) + ' ';
   var h = (date.getHours() + 1 < 10 ? '0' + date.getHours() : date.getHours()) + ':';
-  var mi = (date.getMinutes() + 1 < 10 ? '0' + date.getMinutes() : date.getMinutes());
-  return y + m + d + h + mi
+  var mi = (date.getMinutes() + 1 < 10 ? '0' + date.getMinutes() : date.getMinutes())+ ':';
+  var s = (date.getSeconds() + 1 < 10 ? '0' + date.getSeconds() : date.getSeconds())
+  return y + m + d + h + mi + s
 }
 const Num2daytime = (num) => {
   var date = new Date(num * 1000);

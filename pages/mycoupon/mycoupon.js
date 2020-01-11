@@ -40,14 +40,14 @@ Page({
       url: '/pages/couponwriteoff/couponwriteoff?id=' + e.currentTarget.dataset.id + '&giftid=' + e.currentTarget.dataset.gift,
     })
   },
-  Clicksecond: function() {
+  Clicksecond: function(e) {
     wx.navigateTo({
-      url: '/pages/couponwriteoff/couponwriteoff?id' + e.currentTarget.dataset.id + '&giftid=' + e.currentTarget.dataset.gift,
+      url: '/pages/couponwriteoff/couponwriteoff?id=' + e.currentTarget.dataset.id + '&giftid=' + e.currentTarget.dataset.gift,
     })
   },
-  Clickthird: function() {
+  Clickthird: function(e) {
     wx.navigateTo({
-      url: '/pages/couponwriteoff/couponwriteoff?id' + e.currentTarget.dataset.id + '&over=yes' + '&giftid=' + e.currentTarget.dataset.gift,
+      url: '/pages/couponwriteoff/couponwriteoff?id=' + e.currentTarget.dataset.id + '&over=yes' + '&giftid=' + e.currentTarget.dataset.gift,
     })
   },
   Scrolltolower2: function() {
@@ -69,12 +69,11 @@ Page({
         page:page,
         pagesize:10
       },
-      success: function(res) {
-        console.log(res)        
+      success: function(res) { 
         if (res.data.code == 1) {
           var resdata = res.data.data;
           var list = [];
-          if (status == 2) {
+          if (status == 1) {
             list = that.data.firstList;
             if (page == 1) {
               that.setData({
@@ -87,7 +86,7 @@ Page({
               })
             }
           }
-          if (status == 1) {
+          if (status == 2) {
             list = that.data.secondList;
             if (page == 1) {
               that.setData({
@@ -125,15 +124,16 @@ Page({
                avatar: resdata[i].logo_image,
                logo: resdata[i].logo_image,
                status: sname,
-               id: resdata[i].id
+               id: resdata[i].id,
+               gift_id: resdata[i].gift_id
              })
           }
-          if (status == 2){
+          if (status == 1){
              that.setData({
                firstList:list
              })
           }
-          if (status == 1) {
+          if (status == 2) {
             that.setData({
               secondList: list
             })
@@ -157,9 +157,9 @@ Page({
         token: getApp().globalData.logindata.token
       })
     }
-
-    this.LoadList(this.data.token, 1, 1, '已使用')
-    this.LoadList(this.data.token, 2, 1, '未使用')
+    //1 未使用 2 已使用 3 已过期
+    this.LoadList(this.data.token, 1, 1, '未使用')
+    this.LoadList(this.data.token, 2, 1, '已使用')
     this.LoadList(this.data.token, 3, 1, '已过期')
 
   }
