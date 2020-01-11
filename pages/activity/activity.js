@@ -161,13 +161,12 @@ Page({
             })
             //type: 1待领取2已领取
           }
-          //gift_status
+          //gift_status  1：已购买 0：未购买 
           that.setData({
             coupenlist: list,
             bannersrc: res.data.data.back_image,
             giftstatus: res.data.data.gift_status
           })
-
         }
       }
     })
@@ -209,43 +208,48 @@ Page({
   },
   Clcik2buy: function() {
     var that = this;
-    wx.request({
-      url: util.Baseurl + '/index/buy_gift',
-      data: {
-        token: getApp().globalData.logindata.token,
-        gift_id: this.data.optionsid,
-      },
-      success: function(re) {
-        if (re.data.data.order_id != undefined) {
-          wx.request({
-            url: util.Baseurl + '/pay/pays',
-            data: {
-              token: getApp().globalData.logindata.token,
-              order_id: re.data.data.order_id,
-              zftype: 'wechat',
-            },
-            success: function(res) {
-              if (res.data.code == 1) {
-                var resdata = JSON.parse(res.data.data);
-                wx.requestPayment({
-                  timeStamp: resdata.timeStamp,
-                  nonceStr: resdata.nonceStr,
-                  package: resdata.package,
-                  signType: resdata.signType,
-                  paySign: resdata.paySign,
-                  success: function(res) {
-                    wx.showToast({
-                      title: '支付成功',
-                    })
-                    that.Loadcoupon();
-                  }
-                })
+    if (that.data.giftstatus == 0 || that.data.giftstatus == null) {
+      wx.request({
+        url: util.Baseurl + '/index/buy_gift',
+        data: {
+          token: getApp().globalData.logindata.token,
+          gift_id: this.data.optionsid,
+        },
+        success: function(re) {
+          if (re.data.data.order_id != undefined) {
+            wx.request({
+              url: util.Baseurl + '/pay/pays',
+              data: {
+                token: getApp().globalData.logindata.token,
+                order_id: re.data.data.order_id,
+                zftype: 'wechat',
+              },
+              success: function(res) {
+                if (res.data.code == 1) {
+                  var resdata = JSON.parse(res.data.data);
+                  wx.requestPayment({
+                    timeStamp: resdata.timeStamp,
+                    nonceStr: resdata.nonceStr,
+                    package: resdata.package,
+                    signType: resdata.signType,
+                    paySign: resdata.paySign,
+                    success: function(res) {
+                      wx.showToast({
+                        title: '支付成功',
+                      })
+                      that.Loadcoupon();
+                      that.setData({
+                        giftstatus:1
+                      })
+                    }
+                  })
+                }
               }
-            }
-          })
+            })
+          }
         }
-      }
-    })
+      })
+    }
   },
   onUnload: function() {
     backgroundAudioManager.stop();
