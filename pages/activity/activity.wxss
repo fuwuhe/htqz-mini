@@ -163,11 +163,15 @@ page {
   padding: 40rpx 67rpx;
   color: #ca0618;
   font-size: 36rpx;
+  font-weight: bold;
+}
+.sectip text{
+  display: block;
 }
 
 .titleimg {
   width: 750rpx;
-  margin-left: -30rpx;
+  transform: translateX(-30rpx);
   height: 150rpx;
 }
 

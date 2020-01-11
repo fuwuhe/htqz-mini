@@ -121,7 +121,7 @@ Page({
                end: util.Num2date(resdata[i].endtime),
                limit: resdata[i].condition,
                status: resdata[i].name,
-               num: resdata[i].nouse_number,
+               num: resdata[i].number,
                avatar: resdata[i].logo_image,
                logo: resdata[i].logo_image,
                status: sname,

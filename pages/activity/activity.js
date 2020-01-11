@@ -15,22 +15,17 @@ Page({
     coupenlist: [],
     ranklist: [],
     article: '',
-    mclass:true,
+    mclass: true,
     optionsid: '',
-    giftstatus:0
+    giftstatus: 0
   },
-  onReady:function(){
+  onReady: function() {
     backgroundAudioManager.src = 'http://htqz.0791jr.com/uploads/1.mp3';
     backgroundAudioManager.duration = 60
   },
-  onLoad: function(options) {    
-    
+  onLoad: function(options) {
+
     backgroundAudioManager.play();
-    // wx.playBackgroundAudio({
-    //   dataUrl: 'http://htqz.0791jr.com/uploads/1.mp3',
-    //   title: '',
-    //   coverImgUrl: ''
-    // })
     this.setData({
       optionsid: options.id
     })
@@ -115,7 +110,7 @@ Page({
     //规则
     wx.request({
       url: util.Baseurl + '/index/gift_rules',
-      data:{
+      data: {
         token: wx.getStorageSync('token')
       },
       success: function(res) {
@@ -142,16 +137,16 @@ Page({
   onShow: function() {
     this.Loadcoupon();
   },
-  Loadcoupon:function(){
+  Loadcoupon: function() {
     var that = this;
     //礼包
     wx.request({
       url: util.Baseurl + '/index/gift_detail',
       data: {
         gift_id: that.data.optionsid,
-        token:wx.getStorageSync("token")
+        token: wx.getStorageSync("token")
       },
-      success: function (res) {
+      success: function(res) {
         if (res.data.code == 1) {
           var resdata = res.data.data.list;
           var list = []
@@ -184,9 +179,33 @@ Page({
     })
   },
   Click2coupondetail: function(e) {
-    wx.navigateTo({
-      url: '/pages/coupondetail/coupondetail?id=' + e.currentTarget.dataset.id,
-    })
+    var that = this;
+    if (this.data.giftstatus == 1) {
+      if (e.currentTarget.dataset.sts == 1) {
+        wx.request({
+          url: util.Baseurl + '/coupon/get_coupon',
+          data: {
+            token: wx.getStorageSync('token'),
+            coupon_id: e.currentTarget.dataset.id,
+            gift_id: this.data.optionsid
+          },
+          success: function(res) {
+            console.log(res)
+            wx.navigateTo({
+              url: '/pages/coupondetail/coupondetail?id=' + e.currentTarget.dataset.id,
+            })
+          }
+        })
+      } else {
+        wx.navigateTo({
+          url: '/pages/coupondetail/coupondetail?id=' + e.currentTarget.dataset.id,
+        })
+      }
+    } else {
+      wx.navigateTo({
+        url: '/pages/coupondetail/coupondetail?id=' + e.currentTarget.dataset.id,
+      })
+    }
   },
   Clcik2buy: function() {
     var that = this;
@@ -228,29 +247,22 @@ Page({
       }
     })
   },
-  // onUnload: function() {
-  //   wx.switchTab({
-  //     url: '/pages/index/index',
-  //   })
-  // },
-  Playmusic:function(){
-     this.setData({
-       mclass: !this.data.mclass
-     })
-    if (this.data.mclass){
-      // wx.playBackgroundAudio({
-      //   dataUrl: 'http://htqz.0791jr.com/uploads/1.mp3',
-      //   title: '',
-      //   coverImgUrl: ''
-      // })
+  onUnload: function() {
+    backgroundAudioManager.stop();
+  },
+  Playmusic: function() {
+    this.setData({
+      mclass: !this.data.mclass
+    })
+    if (this.data.mclass) {
       backgroundAudioManager.play();
-    }else{
-      //wx.pauseBackgroundAudio();
+    } else {
       backgroundAudioManager.pause();
     }
   },
   Click2recept: function(e) {
-    if (e.currentTarget.dataset.sts == 1){
+    var that = this;
+    if (e.currentTarget.dataset.sts == 1) {
       wx.request({
         url: util.Baseurl + '/coupon/get_coupon',
         data: {
@@ -258,14 +270,19 @@ Page({
           coupon_id: e.currentTarget.dataset.id,
           gift_id: this.data.optionsid
         },
-        success: function (res) {
+        success: function(res) {
           console.log(res)
           if (res.data.code == 1) {
-            this.Loadcoupon();
+            that.Loadcoupon();
+          } else {
+            wx.showToast({
+              title: '请先购买礼包',
+              icon: 'none'
+            })
           }
         }
       })
-    }else{
+    } else {
       wx.showToast({
         title: '优惠券不可重复领取',
         icon: 'none'

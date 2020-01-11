@@ -25,7 +25,7 @@
       <view class="blklist">
         <ul>
           <li bindtap="Click2detail" wx:for="{{shopList}}" data-id="{{item.id}}" wx:key="index">
-            <image src="{{item.src}}"></image>
+            <image src="{{item.logo_image}}"></image>
             <span>{{item.name}}</span>
           </li>
         </ul>
@@ -57,15 +57,15 @@
       </view>      
     </view>    
     <view class="sectip">
-       注：点任一链接抢购成功后       可享受所有活动商家优惠
+       <text>注：点任一链接抢购成功后</text> 
+       <text>可享受所有活动商家优惠</text>
     </view>
     <view class="couponlist">
-      <view bindtap="Click2coupondetail" wx:for="{{coupenlist}}"  wx:key="index" wx:for-item="coupen" data-id="{{coupen.id}}">
+      <view bindtap="Click2coupondetail" wx:for="{{coupenlist}}"  wx:key="index" wx:for-item="coupen" data-id="{{coupen.id}}" data-sts="{{coupen.status}}">
         <template is="coupen" data="{{coupen}}"></template>
-      </view>
-      
+      </view>      
     </view>
-    <image class="titleimg" src="/images/red_envelopes.png"></image>
+    <image style="height:134rpx;" class="titleimg" src="/images/red_envelopes.png"></image>
     <view class="whiteblk">
       <view class="ranktitle">——赚钱排行榜——</view>
       <view class="ranktable">

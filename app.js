@@ -1,17 +1,16 @@
 //app.js
 const util = require('utils/util.js')
 App({
-  onLaunch: function () {
+  onLaunch: function() {
     var that = this;
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
           wx.getUserInfo({
             success: res => {
-              //console.log(res);
-              this.globalData.userInfo = res.userInfo;              
+              this.globalData.userInfo = res.userInfo;
               var that = this;
-              if (res.userInfo){
+              if (res.userInfo) {
                 wx.login({
                   success: resp => {
                     that.globalData.code = resp.code
@@ -25,7 +24,7 @@ App({
                       header: {
                         'content-type': 'application/json' // 默认值
                       },
-                      success: function (suc) {
+                      success: function(suc) {
                         if (suc.data.msg == "success") {
                           that.globalData.logindata = suc.data.data;
                           wx.setStorageSync('token', suc.data.data.token)
@@ -34,7 +33,7 @@ App({
                     })
                   }
                 })
-              }           
+              }
               if (this.userInfoReadyCallback) {
                 this.userInfoReadyCallback(res);
               }
@@ -44,22 +43,15 @@ App({
       }
     })
   },
-  TestFun:function(){
-   
-  },
-  WXuserlogin:function(){
-    wx.login({
-      success: res => {
-        console.log(res)
-      }
-    })
+  TestFun: function() {
+
   },
   globalData: {
     userInfo: null,
-    selectcard:'',
-    logindata:null,
-    merchants_id:0,
-    code:'',
-    phonenum:''
+    selectcard: '',
+    logindata: null,
+    merchants_id: 0,
+    code: '',
+    phonenum: ''
   }
 })

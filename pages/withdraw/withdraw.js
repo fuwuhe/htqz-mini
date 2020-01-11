@@ -76,7 +76,7 @@ Page({
         })
       }
       if (this.data.withdrawnum.trim() != '') {
-        if (!/^[0-9]*$/.test(this.data.withdrawnum)) {
+        if (!/^\+?(\d*\.\d{2})$/.test(this.data.withdrawnum)) {
           wx.showToast({
             title: '请输入正确格式的提现金额',
             icon: 'none',
@@ -117,7 +117,6 @@ Page({
         })
       }
       if (this.data.withdrawnum.trim() != '' && this.data.fromadd.trim() != '') {
-        //^[0-9]*$ hotel california
         if (!/^[0-9]*$/.test(this.data.withdrawnum)) {
           wx.showToast({
             title: '请输入正确格式的提现金额',
@@ -134,7 +133,6 @@ Page({
               bank_id: this.data.bankid
             },
             success: function (res) {
-              console.log(res)
               if (res.data.code == 1) {
                 wx.navigateTo({
                   url: '/pages/withdrawresult/withdrawresult',
