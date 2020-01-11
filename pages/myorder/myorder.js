@@ -34,11 +34,7 @@ Page({
           }
           if (from == 'scroll') {
             if (resdata.length == 0) {
-              wx.showToast({
-                title: '暂无更多内容',
-                icon: 'none',
-                duration: 1000
-              })
+
             }            
             if (resdata.length >= 10) {
               that.setData({
@@ -54,7 +50,7 @@ Page({
               src: resdata[i].image,
               theme: resdata[i].name,
               price: resdata[i].price,
-              id:resdata[i].id
+              id: resdata[i].gift_id
             })
           }
           that.setData({

@@ -11,11 +11,10 @@ Page({
     page:1
   },
   LoadList:function(page){
-    //getApp().globalData.logindata.token
      wx.request({
        url: util.Baseurl +'/distribution/rebateOrder',
        data:{
-         token: '53864b11-b6aa-46d8-ab3a-7200253d4715',
+         token: wx.getStorageSync('token'),
          page:1,
          pagesize:10
        },

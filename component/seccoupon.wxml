@@ -3,7 +3,7 @@
   <view class="order">
     <view class="head">
       <image class="logo" src="{{seccoupon.avatar}}"></image>
-      <text>{{seccoupon.name}}</text>
+      <text>{{seccoupon.name?seccoupon.name:''}}</text>
     </view>
     <view class="body">
       <image class="logo" src="{{seccoupon.logo}}"></image>

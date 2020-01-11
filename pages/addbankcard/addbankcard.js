@@ -47,10 +47,8 @@ Page({
            for(var i=0;i<resdata.length;i++){
              list.push(resdata[i].name)
            }
-           console.log(list)
            var listdata = [];
            listdata[0] = list
-           console.log(listdata)
            that.setData({
              listData_01: listdata
            })
@@ -59,9 +57,6 @@ Page({
     })
   },
   Suretoadd: function() {
-    console.log(this.data.picker_01_data[0])
-    console.log(this.data.personname)
-    console.log(this.data.cardnum)
     var that = this;
     if (this.data.picker_01_data.length == 0){
       wx.showToast({
@@ -101,7 +96,6 @@ Page({
              bank_name: this.data.picker_01_data[0]
            },
            success:function(res){
-             console.log(res)
              if(res.data.code == 1){
                wx.navigateBack({
                  delta:1

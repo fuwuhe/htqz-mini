@@ -3,18 +3,15 @@ const util = require('../../utils/util.js')
 
 Page({
   data: {
-    token: '22e3f80f-33f9-45e2-826d-b12d5b06d98e',
+    token: '',
     loginname: '',
     password: ''
   },
   onLoad: function() {
-    console.log(getApp().globalData.logindata)
     if (getApp().globalData.logindata) {
       this.setData({
         token: getApp().globalData.logindata.token
       })
-    } else {
-
     }
   },
   Blurname: function(e) {
@@ -28,7 +25,6 @@ Page({
     })
   },
   Click2login: function() {
-    console.log(this.data.password)
     if (this.data.password.length == '') {
       wx.showToast({
         title: '请输入密码',
@@ -57,7 +53,6 @@ Page({
           'content-type': 'application/json' // 默认值
         },
         success: function(suc) {
-          console.log(suc.data.code)
           if (suc.data.code != 1) {
             wx.showToast({
               title: suc.data.msg,

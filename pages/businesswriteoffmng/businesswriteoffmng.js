@@ -34,17 +34,14 @@ Page({
       })
   },
   Firstscroll: function() {
-    console.log(1)
     this.LoadList(1, '待核销', this.data.firstpage, this)
 
   },
   Secondscroll: function() {
-    console.log(1)
     this.LoadList(2, '已核销', this.data.secondpage, this)
  
   },
   Thirdscroll: function() {
-    console.log(3)
     this.LoadList(3, '已过期', this.data.thirdpage, this)
   },
   LoadList: function(status,sname,page, that) {
@@ -115,7 +112,6 @@ Page({
               status: sname,
             })
           }
-          console.log(list)
           if(status == 1){
              that.setData({
                firstList:list

@@ -7,7 +7,7 @@
 
 .order .head {
   width: 100%;
-  border-bottom: 2px solid #ededed;
+  border-bottom: 2rpx solid #ededed;
   line-height: 80rpx;
 }
 

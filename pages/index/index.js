@@ -123,7 +123,6 @@ Page({
   },
   Scrolltolower: function() {
     var page = this.data.page;
-    console.log(page)
     if (page > 1) {
       this.LoadList(page, 'scroll')
     }
