@@ -1,0 +1,68 @@
+<!--logs.wxml-->
+<view class="container">
+  <view class="bg">
+     <image class="bgpic" src="http://htqzqny.0791jr.com/uploads/20200108/FhIMYQYaNRBWZGLc9G5WXHA7xNMO.jpg"></image>
+     <view class="title">
+       <image src="/images/tipicon.png"></image>
+       <text>我的邀请战绩</text>
+       <image src="/images/tipicon.png"></image>
+     </view>
+     <view class="tribox">
+       <image class="line" src="/images/line_g@2x.png"></image>
+       <image class="bgimg" src="/images/background_bg.png"></image>
+       <view class="row">
+         <text>邀请好友</text>
+         <view><span>{{invitenum}}</span>人</view>
+       </view>
+       <view class="row">
+          <text>下单成功好友</text>
+          <view><span>{{successnum}}</span>人</view>
+       </view>
+     </view>
+     <view class="title">
+       <image src="/images/tipicon.png"></image>
+       <text>简单三步 立享好礼</text>
+       <image src="/images/tipicon.png"></image>
+     </view>
+     <view class="box">
+        <view class="dottedline"></view>
+        <view class="row">
+          <view class="index">1</view>
+          <text>发送邀请\n给好友</text>
+       </view>
+       <view class="row">
+          <view class="index">2</view>
+          <text>好友登录或\n下单成功</text>
+       </view>
+       <view class="row">
+          <view class="index">3</view>
+          <text>领取奖励</text>
+       </view>
+     </view> 
+     <view class="shareabtn" bindtap="Sharenow">立即分享</view>     
+     
+  </view>
+  <view class="torule" bindtap="Navtorules">活动规则</view>
+  <view class="cover {{active}}" bindtap="Closelayer"></view>
+  <view class="layer {{active}}">
+     <image src="/images/class_icon_tc.png" bindtap="Closelayer" class="close"></image>
+     <view class="titles">分享</view>
+     <view class="layerbox">
+       <button open-type="share" class="row" bindtap="Towechatpal">
+         <image src="/images/wechat.png"></image>
+         <text>微信好友</text>
+       </button>
+       <view class="row" bindtap="Tomakepost">
+         <image src="/images/photo.png"></image>
+         <text>生成海报</text>
+       </view>
+     </view>
+  </view>
+  <view class='imagePathBox' bindtap="Cancelpost" hidden="{{maskHidden == false}}">
+      <image src="{{imagePath}}" catchtap="Stopprops" class='postimg'></image>
+      <view class='saveimg' catchtap='Savepost' >保存海报，分享到朋友圈</view>
+    </view>
+  <view class="canvas-box">
+      <canvas style="width: 375px;height: 667px;position:fixed;top:9999px" canvas-id="mycanvas"/>
+  </view>  
+</view>

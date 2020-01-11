@@ -1,0 +1,76 @@
+
+page{
+  background: #fff;
+}
+.perinfo{
+  margin: 30rpx auto;
+  width: 740rpx;
+  height: 290rpx;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  position: relative
+}
+
+.perinfo .bg{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 740rpx;
+  height: 290rpx;
+  z-index: -1
+}
+
+.perinfo .avatar{
+  width: 136rpx;
+  height: 136rpx;
+  border-radius: 50%;
+  margin-left:60rpx;
+  margin-right: 30rpx;
+}
+.perinfo .info{
+  color: #fff;
+}
+.perinfo .info .phone{
+  color: #fff;
+  margin-top: 20rpx;
+}
+.perinfo .info .phone image{
+  width: 14rpx;
+  height: 22rpx;
+}
+.linklist{
+  width: 690rpx;
+  margin: 30rpx auto;
+}
+.linklist .links{
+  border-bottom: 2rpx solid #EDEDED;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: 120rpx;
+  position: relative;
+}
+
+.linklist .links .icon{
+  position: absolute;
+  left: 40rpx;
+  transform: translateX(-50%)
+}
+.linklist .links .name{
+  margin-left: 100rpx;
+}
+.linklist .links .arrow{
+  position: absolute;
+  right: 0rpx;
+  width: 12rpx;
+  height: 24rpx;
+}
+.authbtn{
+  background: rgba(0, 0, 0, 0);
+  color: #fff;
+  display: inline;
+  font-size: 28rpx !important;
+  font-weight: 400;
+  padding: 0 20rpx;
+}

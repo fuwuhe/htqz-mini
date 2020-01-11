@@ -1,0 +1,25 @@
+<!--logs.wxml-->
+<view class="container">
+  <picker isShowPicker="{{isShow_01}}" bindsure="sureCallBack_01" bindcancle="cancleCallBack_01" scrollType="normal" listData="{{listData_01}}" indicatorStyle="height:47px" titleText="请选择开户行" cancelStyle="font-size:28rpx;" sureStyle="font-size:28rpx;" titleStyle="font-size:32rpx;"
+    pickerHeaderStyle="color:#fff;background:#CA0618;" chooseItemTextStyle="color:#CA0618"></picker>
+  <view class="form" style="margin-bottom:30rpx;">
+    <view class="title">开户行</view>
+    <view class="input" bindtap="showPicker_01">
+      <input placeholder="请选择开户行" value="{{picker_01_data}}"></input>
+      <image src="/images/right_arrow@2x.png"></image>
+    </view>
+  </view>
+  <view class="form">
+    <view class="title">持卡人</view>
+    <view class="input">
+      <input placeholder="请输入持卡人姓名" bindblur="Blurpername" value="{{personname}}"></input>
+    </view>
+  </view>
+  <view class="form">
+    <view class="title">卡号</view>
+    <view class="input">
+      <input bindblur="Blurcarnum" placeholder="请输入银行卡卡号" value="{{cardnum}}"></input>
+    </view>
+  </view>
+  <view class="addbtn" bindtap="Suretoadd">确定</view>
+</view>

@@ -1,0 +1,117 @@
+.order {
+  width: 650rpx;
+  margin: 20rpx auto;
+  padding: 20rpx 20rpx;
+  border-radius: 20rpx;
+  background: #fff;
+}
+
+.order .head{
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #333;
+}
+.order .head .logo{
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+}
+.order .body{
+  width: 650rpx;
+  height: 170rpx;
+  margin-top: 20rpx;
+  border-radius: 15rpx;
+  box-shadow: 0 0 2rpx 3rpx rgb(244, 244, 244);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.order .body .logo{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 10rpx;
+  margin-left: 20rpx;
+}
+.order .body .info{
+  margin-left: 30rpx;
+}
+.order .body .info .price{
+  color: #CA0618;
+  font-size: 50rpx;
+}
+.order .body .info .price.used{
+  color: #bbbbbb;
+}
+
+.order .body .info .time{
+  font-size: 22rpx;
+  color: #B2B2B2;
+}
+.order .body .line{
+  position: absolute;
+  right: 190rpx;
+  height: 190rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: #fff;
+}
+.order .body .line image{
+  width: 20rpx;
+  height: 170rpx;
+  margin-top: 10rpx;  
+}
+.order .body .right{
+  position: absolute;
+  right: 0;
+  width: 200rpx;
+  height: 170rpx;
+  background: #CA0618;
+  z-index: 1;
+  border-top-right-radius: 15rpx;
+  border-bottom-right-radius: 15rpx;
+}
+.order .body .right.used{
+  background: #BBBBBB
+}
+.order .body .right.used .btn{
+  color: #BBBBBB
+}
+.order .body .right .lines{
+  position: absolute;
+  width: 10rpx;
+  height: 170rpx;
+  background: #fff;
+  left: 0;
+}
+.order .body .right .limit{
+  font-size: 24rpx;
+  color: #fff;
+  text-align: center;
+  margin: 20rpx auto 5rpx;
+}
+.order .body .right .num{
+  text-align: center;
+  color: #fff;
+  font-size: 26rpx;
+  margin-bottom: 10rpx;
+}
+.order .body .right .btn{
+  margin: 0 auto;
+  width: 134rpx;
+  height: 40rpx;
+  text-align: center;
+  line-height: 40rpx;
+  color: #CA0618;
+  letter-spacing: 5rpx;
+  font-size: 22rpx;
+  background: #fff;
+  border-radius: 25rpx;
+}
+
+
+
+
+

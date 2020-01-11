@@ -1,0 +1,13 @@
+.empty-imgbox{
+  width: 365rpx;
+  margin: 200rpx auto 0;
+  display: block;
+}
+.empty-hints image{
+  width: 100%;
+}
+.empty-hints .empty-font{
+  color:#888;
+  text-align: center;
+  margin-top:20rpx;
+}

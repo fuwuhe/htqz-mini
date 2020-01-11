@@ -1,0 +1,22 @@
+<!--logs.wxml-->
+<view class="container">
+  <view class="perinfo">
+    <image class="bg" src="/images/my_background_bg.png"></image>
+    <image class="avatar" src="{{avatar}}"></image>
+    <view class="info">
+      <view>{{username}}</view>
+      <view class="phone">
+        <image src="/images/my_telephone.png"></image>
+        <text style="margin-left:10rpx;" wx:if="{{phonenum!=''}}">{{phonenum}}</text>
+        <button wx:if="{{phonenum==''}}" class="authbtn" size="default" open-type="getPhoneNumber" lang="zh_CN" bindgetphonenumber="getPhoneNumber">绑定手机号</button>
+      </view>
+    </view>
+  </view>
+  <view class="linklist">
+    <view class="links" wx:for="{{linklist}}" wx:key="index" data-index="{{index}}" bindtap="Selectoption">
+      <image class="icon" src="{{item.src}}" style="width:{{item.width}}rpx;height:{{item.height}}rpx"></image>
+      <view class="name">{{item.name}}</view>
+      <image class="arrow" src="/images/right_arrow@2x.png"></image>
+    </view>
+  </view>
+</view>

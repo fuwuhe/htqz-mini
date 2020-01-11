@@ -1,0 +1,42 @@
+<!--logs.wxml-->
+<view class="container">
+  <view class="headarea">
+    <image class="bg" src="/images/me_fx_bga@2x.png"></image>
+    <view class="image">
+      <image src="{{avatar}}"></image>
+    </view>
+    <view class="mid">
+      <view class="name">{{nickname}}</view>
+      <view class="icons">
+        <image src="/images/me_fx_crown_z@2x.png"></image>
+        <text>{{level}}</text>
+      </view>
+      <view class="icons">
+        <image src="/images/me_fx_customer_z@2x.png"></image>
+        <text>{{member}}人</text>
+      </view>
+    </view>
+    <view class="right">
+      <view class="money">￥{{money}}</view>
+      <text>预估佣金(元)</text>
+      <view bindtap="Distributenow" class="btn">立即提现</view>
+    </view>
+  </view>
+  <view class="brokerage">
+    <view class="line"></view>
+    <view class="blk">
+      <view>{{mybrokerage}}</view>
+      <text>我的佣金(元)</text>
+    </view>
+    <view class="blk">
+      <view>{{withdraw}}</view>
+      <text>已提现佣金(元)</text>
+    </view>
+  </view>
+  <view class="linklist">
+    <view class="link" bindtap="Selectoption" data-index="{{index}}" wx:for="{{linklist}}" wx:key="index">
+       <image src="{{item.src}}" class="image" style='width:{{item.width}}rpx;height:{{item.height}}rpx'></image>
+       <view>{{item.name}}</view>
+    </view>
+  </view>
+</view>

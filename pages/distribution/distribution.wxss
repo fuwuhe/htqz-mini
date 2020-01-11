@@ -1,0 +1,131 @@
+.headarea{
+  width: 100%;
+  height: 265rpx;
+  background: linear-gradient(#CA0618 0%,#FF4052 100%);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.headarea .bg{
+  width: 100%;
+  height: 184rpx;
+  position: absolute;
+  left: 0;
+  bottom: -10rpx;
+  z-index: -1;
+}
+.headarea .image{
+  margin-left: 30rpx;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  border: 3rpx solid #ACE3FF;
+}
+.headarea .image image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.headarea .mid{
+  color: #fff;
+  margin-left: 16rpx;
+}
+.headarea .mid .name{
+  font-weight: bold;
+  font-size: 32rpx;
+  letter-spacing: 2rpx;
+  margin-bottom: 25rpx;
+}
+.headarea .mid .icons{
+  font-size: 22rpx;
+  letter-spacing: 2rpx;
+}
+.headarea .mid .icons image{
+  width: 28rpx;
+  height: 22rpx;
+  margin-right: 16rpx;  
+}
+.headarea .right{
+  margin-left: 150rpx;
+  color: #fff;
+  text-align: center;
+}
+.headarea .right .money{
+  font-size: 40rpx;
+  text-align: center;
+}
+.headarea .right text{
+  font-size: 24rpx;
+}
+.headarea .right .btn{
+  margin: 10rpx auto;
+  font-size: 23rpx;
+  width: 150rpx;
+  height: 45rpx;
+  border-radius: 30rpx;
+  line-height: 45rpx;
+  background: linear-gradient(#F7F8A5,#F58E09)
+}
+.brokerage{
+  width: 100%;
+  background: #fff;
+  position: relative;
+  height: 150rpx;
+  display: flex;
+}
+.brokerage .line{
+  width: 2rpx;
+  height: 90rpx;
+  background: #E6E6E6;
+  position: absolute;
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  
+}
+.brokerage .blk{
+  width: 50%;
+  flex: 1;
+  text-align: center;
+}
+.brokerage .blk view{
+  margin-top: 20rpx;
+  font-size: 38rpx;
+  color: #CA0618;
+}
+.brokerage .blk text{
+  font-size: 24rpx;
+  color: #666666;
+}
+.linklist{
+  width: 100%;
+
+}
+.linklist .link{
+  width: 33.1%;
+  float: left;
+  padding:129rpx 0rpx 59rpx;
+  font-size: 24rpx;
+  background: #fff;
+  text-align: center;
+  border-top: 1rpx solid #E6E6E6;
+  border-right: 1rpx solid #E6E6E6; 
+  position: relative;
+}
+.linklist .link:nth-child(3n){
+  border-right: 0px;
+}
+.linklist:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.linklist .link image{
+  position: absolute;
+  left: 50%;
+  top: 90rpx;
+  transform: translate(-50%,-50%)
+}

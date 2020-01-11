@@ -1,0 +1,11 @@
+<!--logs.wxml-->
+<import src='../../component/empty.wxml' />
+<import src='../../component/order.wxml' />
+<view class="container">
+  <scroll-view scroll-y bindscrolltolower="Firstscroll">
+    <template wx:if="{{orderlist.length==0}}" is="empty" data="{{emptyTip}}"></template>
+    <view>
+      <template is="order" wx:for="{{orderlist}}" wx:key="index" wx:for-item="order" data="{{order}}"></template>
+    </view>
+  </scroll-view>
+</view>

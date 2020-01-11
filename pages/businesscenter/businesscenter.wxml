@@ -1,0 +1,16 @@
+<!--logs.wxml-->
+<view class="container">
+  <view class="banner" style="background:url({{background}});background-size:100% 400rpx">
+     <text>{{shopname}}</text>
+  </view>
+  <view class="icons">
+     <view class="blk" bindtap="Scancode">
+        <image style="width:136rpx;height:136rpx" src="/images/sweep_code@2x.png"></image>
+        <view>扫码核销</view>    
+     </view>
+     <view class="blk" bindtap="Navtowriteoff">
+        <image style="width:121rpx;height:135rpx" src="/images/write_off_management@2x.png"></image>
+        <view>核销管理</view>
+     </view>
+  </view>
+</view>

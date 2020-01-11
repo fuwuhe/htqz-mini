@@ -1,0 +1,46 @@
+.coupon{
+  display: flex;
+  width: 650rpx;
+  padding: 0 20rpx;
+  margin: 30rpx auto;
+  border-radius: 10rpx;
+  height: 220rpx;
+  position: relative;
+  align-items: center;
+  overflow: hidden;
+}
+.coupon .image{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  margin-right: 10rpx; 
+}
+
+.coupon .line{
+  width: 20rpx;
+  height: 220rpx;
+}
+
+
+.coupon .rightcon{
+  margin-left: 10rpx;
+}
+.coupon .rightcon .fs28{
+  color: #FFFFFF;
+  font-size: 28rpx;
+  line-height: 40rpx;
+} 
+.coupon .rightcon .fs24{
+  color: #FFFFFF;
+  font-size: 24rpx;
+}
+.coupon .rightcon .fs24 span{
+  color: #F1ED14
+}
+.coupon .status{
+  position: absolute;
+  right: -10rpx;
+  top: -20rpx;
+  width: 124rpx;
+  height: 124rpx;
+}

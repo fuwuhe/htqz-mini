@@ -1,0 +1,32 @@
+@import '../../component/empty.wxss';
+
+scroll-view {
+  height: 100vh;
+}
+
+.withdraw {
+  width: 690rpx;
+  padding: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid #e6e6e6;
+  height: 120rpx;
+  background: #fff;
+}
+
+.withdraw .left {
+  color: #666;
+  font-size: 24rpx;
+}
+
+.withdraw .mid {
+  color: #333;
+  font-size: 28rpx;
+}
+
+.withdraw .right {
+  color: #ca0618;
+  font-size: 30rpx;
+  font-weight: 500;
+}

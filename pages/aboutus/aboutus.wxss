@@ -1,0 +1,6 @@
+page{
+  background: #fff;
+}
+.article{
+  color: #333
+}

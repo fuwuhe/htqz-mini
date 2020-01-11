@@ -1,0 +1,25 @@
+<!--logs.wxml-->
+<template name="seccoupon">
+  <view class="order">
+    <view class="head">
+      <image class="logo" src="{{seccoupon.avatar}}"></image>
+      <text>{{seccoupon.name}}</text>
+    </view>
+    <view class="body">
+      <image class="logo" src="{{seccoupon.logo}}"></image>
+      <view class="info">
+        <view class='price {{(seccoupon.status == "未使用"||seccoupon.status == "待核销")?"":"used"}}'>￥{{seccoupon.money}}</view>
+        <view class="time">{{seccoupon.start}}-{{seccoupon.end}}</view>
+      </view>
+      <view class="line">
+      <image src='../../images/{{(seccoupon.status == "未使用"||seccoupon.status == "待核销")?"my_interval":"my_interval_a"}}.png'></image>
+      </view>
+      <view class='right {{(seccoupon.status == "未使用"||seccoupon.status == "待核销")?"":"used"}}'>
+       <view class="lines"></view>
+       <view class="limit">满{{seccoupon.limit}}元可用</view>
+       <view class="num">X{{seccoupon.num}}</view>
+       <view class="btn">{{seccoupon.status == "未使用"?"立即使用":seccoupon.status}}</view>
+      </view>
+    </view>    
+  </view>
+</template>

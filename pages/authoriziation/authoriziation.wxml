@@ -1,0 +1,8 @@
+<!--logs.wxml-->
+<view class="container">
+  <view class="icons">
+    <image src="/images/wechat.png"></image>
+    <text>请使用微信登录</text>
+  </view>
+  <button size="default" wx:if="{{notauth}}" class="auth" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">一键授权登录</button>
+</view>

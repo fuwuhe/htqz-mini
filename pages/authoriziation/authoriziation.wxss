@@ -1,0 +1,27 @@
+page{
+  background: #fff;
+}
+.icons{
+  color: #333;
+  font-size: 30rpx;
+  text-align: center;
+  font-weight: 500;
+}
+.icons image{
+  width: 150rpx;
+  height: 150rpx;
+  display: block;
+  margin: 260rpx auto 30rpx;
+}
+.auth{
+   width: 700rpx !important;
+   line-height: 90rpx;
+   border-radius: 10rpx;
+   background: #0CC518;
+   font-size: 32rpx;
+   color: #FFFFFF;
+   font-weight: 500;
+   margin: 100rpx auto;
+   padding: 0;
+   max-width: 700rpx;
+}

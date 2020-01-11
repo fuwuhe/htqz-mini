@@ -1,0 +1,12 @@
+<!--mybankcard.wxml-->
+<import src='../../component/empty.wxml' />
+<view class="container">
+   <template wx:if="{{cardlist.length==0}}" is="empty" data="{{emptyTip}}"></template>
+   <view bindtap="Back2withdraw" data-index="{{index}}"  class="cardlist" wx:for="{{cardlist}}" wx:key="index" data-id="{{item.id}}">
+    <image src="{{item.logo}}"></image>
+     <view class="line1">{{item.name}}</view>
+     <view class="number">{{item.numbers}}</view>
+     <view class="btn" wx:if="{{!fromwd}}" data-index="{{index}}" data-id="{{item.id}}" catchtap="Unbindcard">解绑</view>
+   </view>
+   <view bindtap="Click2add" class="addbtn">添加银行卡</view>
+</view>

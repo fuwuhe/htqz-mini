@@ -1,0 +1,15 @@
+<!--logs.wxml-->
+<import src='../../component/empty.wxml' />
+<view class="container">
+  <scroll-view scroll-y bindscrolltolower="Firstscroll">
+  <template wx:if="{{withdrawlist.length == 0}}" is="empty" data="{{emptyTip}}"></template> 
+    <view class="withdraw" wx:for="{{withdrawlist}}" wx:key="index">
+      <view class="left">
+         <view class="day">{{item.day}}</view>
+         <view class="time">{{item.time}}</view>
+      </view>
+      <view class="mid">{{item.towhere}}</view>
+      <view class="right">-￥{{item.num}}</view>
+    </view>
+  </scroll-view>
+</view>

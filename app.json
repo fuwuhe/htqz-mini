@@ -1,0 +1,58 @@
+{
+  "pages": [    
+    "pages/welcome/welcome",
+    "pages/authoriziation/authoriziation",
+    "pages/index/index",
+    "pages/mycenter/mycenter",
+    "pages/activity/activity",
+    "pages/couponlist/couponlist",
+    "pages/myorder/myorder",
+    "pages/mycoupon/mycoupon",
+    "pages/couponwriteoff/couponwriteoff",
+    "pages/distribution/distribution",
+    "pages/withdrawdetail/withdrawdetail",
+    "pages/mybankcard/mybankcard",
+    "pages/addbankcard/addbankcard",
+    "pages/distributionorder/distributionorder",
+    "pages/withdraw/withdraw",
+    "pages/withdrawresult/withdrawresult",
+    "pages/promote/promote",
+    "pages/myteammate/myteammate",
+    "pages/businesslogin/businesslogin",
+    "pages/businesscenter/businesscenter",
+    "pages/businesswriteoffmng/businesswriteoffmng",
+    "pages/businessdetail/businessdetail",
+    "pages/aboutus/aboutus",
+    "pages/activityrule/activityrule",
+    "pages/coupondetail/coupondetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "tabBar": {
+    "selectedColor": "#CA0618",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tab_activity_n.png",
+        "selectedIconPath": "images/tab_activity_s.png",
+        "text": "活动"
+      },
+      {
+        "pagePath": "pages/mycenter/mycenter",
+        "iconPath": "images/tab_we_n.png",
+        "selectedIconPath": "images/tab_we_s.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+}

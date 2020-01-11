@@ -1,0 +1,5 @@
+@import '../../component/order.wxss';
+@import '../../component/empty.wxss';
+scroll-view{
+  height: 100vh;
+}

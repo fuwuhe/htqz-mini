@@ -1,0 +1,10 @@
+page{
+  background: #fff;
+}
+.container{
+  height: 100vh;
+}
+image{
+  width: 750rpx;
+  height: 922.7rpx;
+}

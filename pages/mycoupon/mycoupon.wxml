@@ -1,0 +1,45 @@
+<!--logs.wxml-->
+<import src='../../component/empty.wxml' />
+<import src='../../component/seccoupon.wxml' />
+<view class="container">
+    <view class="title">
+      <view class="{{0 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='0'>
+        <text>未使用({{firstList.length}})</text>
+        <hr class="line-style" />
+      </view>
+      <view class="{{1 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='1'>
+        <text>已使用({{secondList.length}})</text>
+        <hr class="line-style" />
+      </view>
+      <view class="{{2 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='2'>
+        <text>已过期({{thirdList.length}})</text>
+        <hr class="line-style" />
+      </view>
+    </view>
+    <swiper class='swiper' bindchange='pagechange' current='{{currentIndex}}'>
+      <swiper-item class='swiper'>
+        <scroll-view scroll-y bindscrolltolower="Scrolltolower">
+          <view bindtap="Clickfirst" wx:for="{{firstList}}" wx:key="index" wx:for-item="seccoupon" data-idx="{{index}}" data-gift="{{seccoupon.gift_id}}" data-id="{{seccoupon.id}}">
+            <template is="seccoupon" data="{{seccoupon}}"></template>           
+          </view>
+           <template wx:if="{{firstList.length == 0}}" is="empty" data="{{emptyTip}}"></template>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item class='swiper' class='swiper'>
+        <scroll-view scroll-y bindscrolltolower="Scrolltolower2">
+          <view bindtap="Clicksecond" wx:for="{{secondList}}" wx:key="index" wx:for-item="seccoupon" data-gift="{{seccoupon.gift_id}}" data-id="{{seccoupon.id}}">
+            <template is="seccoupon" data="{{seccoupon}}"></template>           
+          </view>
+           <template wx:if="{{secondList.length == 0}}" is="empty" data="{{emptyTip}}"></template>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item class='swiper' class='swiper'>
+        <scroll-view scroll-y bindscrolltolower="Scrolltolower3">
+          <view bindtap="Clickthird" wx:for="{{thirdList}}" wx:key="index" wx:for-item="seccoupon" data-gift="{{seccoupon.gift_id}}" data-id="{{seccoupon.id}}">
+            <template is="seccoupon" data="{{seccoupon}}"></template>            
+          </view>
+          <template wx:if="{{thirdList.length == 0}}" is="empty" data="{{emptyTip}}"></template>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+</view>

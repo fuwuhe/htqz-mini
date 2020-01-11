@@ -1,0 +1,41 @@
+<!--logs.wxml-->
+<view class="container">
+  <view class="qrcodezone">
+     <view class="code">
+       <view wx:if="{{over}}" class="cover">已过期</view>
+       <image src="{{qrcode}}"></image>
+     </view>
+     <view class="ball ball1"></view>
+     <view class="ball ball2"></view>
+     <view class="word">请向商家展示此二维码</view>
+  </view>
+  <view class="detailbox">
+    <view class="dashline"></view>
+    <view class="ball ball1"></view>
+    <view class="ball ball2"></view>
+    <view class="info">
+      <view class="name">订单编号</view>
+      <view class="con">{{ordercode}}</view>
+    </view>
+    <view class="info">
+      <view class="name">创建时间</view>
+      <view class="con">{{createtime}}</view>
+    </view>
+    <view class="info">
+      <view class="name">支付时间</view>
+      <view class="con">{{paytime}}</view>
+    </view>
+    <view class="info">
+      <view class="name">支付金额</view>
+      <view class="con">￥{{paynum}}</view>
+    </view>
+    <view class="info" style="margin-top:50rpx;">
+      <view class="name">店铺名称</view>
+      <view class="con">{{shopname}}</view>
+    </view>
+    <view class="info">
+      <view class="name">核销次数</view>
+      <view class="con">{{number}}/{{totel}}</view>
+    </view>
+  </view>
+</view>

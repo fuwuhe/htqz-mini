@@ -1,0 +1,37 @@
+<!--logs.wxml-->
+<view class="container">
+  <view class="forms">
+    <text>选择提现方式</text>
+    <radio-group bindchange="radioChange">
+       <radio class="radio"  wx:key="name" value="wechat" checked="{{wxchecked}}">
+          <text>微信</text>
+        </radio>
+        <radio class="radio"  wx:key="name" value="bank" checked="{{!wxchecked}}">
+          <text>银行卡</text>
+        </radio>
+    </radio-group>
+  </view>
+  <view class="forms between" wx:if="{{!wxchecked}}">
+     <view>{{bankname == ''?'选择银行卡':bankname}}</view>
+     <view bindtap="Navtobanklist" class="bankinput">
+       <input disabled placeholder="" value="{{fromadd}}"></input>
+       <image src="/images/right_arrow@2x.png"></image>
+     </view>
+  </view>
+  <view class="withdrawzone">
+     <view class="title">提现金额</view>
+     <view class="input">
+       ￥<input type="digit" bindblur="BlurNum" bindinput="InputNum" value="{{withdrawnum}}"></input>
+     </view>
+     <view class="bot">
+       <view class="left">
+         我的余额{{balance}}元,
+         <text bindtap="Withdrawall">全部提现</text>
+       </view>
+       <view class="right">
+         最低限额{{lowest}}元
+       </view>
+     </view>
+  </view>
+  <view catchtap="Back2lastpage" class="addbtn">提现</view>
+</view>

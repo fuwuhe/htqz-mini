@@ -1,0 +1,23 @@
+page{
+  background: #fff;
+}
+.forms{
+  width: 600rpx;
+  margin: 260rpx auto 100rpx;
+}
+.forms .row{
+  display: flex;
+  border-bottom: 1rpx solid #e6e6e6;
+  height: 100rpx;
+  align-items: center;
+  margin-top: 30rpx;
+  font-size: 32rpx;
+  color: #333;
+}
+.forms .row input{
+  width: 500rpx;
+  height: 100rpx;
+}
+.forms .row image{
+   margin-right: 30rpx;
+}

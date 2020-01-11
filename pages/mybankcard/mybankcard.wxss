@@ -1,0 +1,41 @@
+@import '../../component/empty.wxss';
+
+.cardlist{
+  width: 630rpx;
+  height: 155rpx;
+  padding: 20rpx 30rpx;
+  border-radius: 10rpx;
+  margin: 20rpx auto;
+  background: #2D64A5;
+  color: #fff;
+  position: relative;
+}
+.cardlist .line1{
+   margin-left: 120rpx;
+   margin-top: 25rpx;
+}
+.cardlist .number{
+  margin-left: 120rpx;
+  margin-top: 10rpx;
+  font-size: 40rpx;
+}
+.cardlist image{
+  position: absolute;
+  top: 35rpx;
+  left: 35rpx;
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 40rpx;
+}
+.cardlist .btn{
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+  width: 100rpx;
+  line-height: 44rpx;
+  border-radius: 30rpx;
+  background: #fff;
+  text-align: center;
+  font-size: 26rpx;
+  color: #333;
+}

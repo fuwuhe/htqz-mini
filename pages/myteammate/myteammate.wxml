@@ -1,0 +1,12 @@
+<!--logs.wxml-->
+<import src='../../component/empty.wxml' />
+<view class="container">
+  <scroll-view scroll-y bindscrolltolower="Firstscroll">
+    <template wx:if="{{matelist.length==0}}" is="empty" data="{{emptyTip}}"></template>
+    <view class="matelist" wx:for="{{matelist}}" wx:key="index">
+      <image src="{{item.avatar}}"></image>
+      <text class="name">{{item.name}}</text>
+      <text class="phone">{{item.phone}}</text>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,70 @@
+/**app.wxss**/
+page{
+  background: rgb(245, 245, 245)
+}
+.container {
+  height: 100%;
+} 
+.blocktitle{
+  color: #333333;
+  font-size: 30rpx;
+}
+.blocktitle span{
+  color: #BBBBBB
+}
+.botbtn{
+  position: fixed;
+  width: 100%;
+  bottom: 0rpx;
+  background: #FF6E0E;
+  line-height: 100rpx;
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+  font-weight: 500;
+}
+.botbtn.clicked{
+  background: #CCCCCC;
+}
+.couponlist>view:nth-child(4n-1){
+  background: linear-gradient(to right,#EC592A 0%,#ED5733 50%,#F33E47 100% )
+}
+.couponlist>view:nth-child(4n){
+  background: linear-gradient(to right,#DCB075 0%,#DFB37A 50%,#E1B26F 100% )
+}
+.couponlist>view:nth-child(4n-3){
+  background: linear-gradient(to right,#2E71BD 0%,#374BA3 50%,#4D288F 100% )
+}
+.couponlist>view:nth-child(4n-2){
+  background: linear-gradient(to right,#5209A3 0%,#6D1692 50%,#8B267E 100% )
+}
+.addbtn{
+  width: 650rpx;
+  background: #CA0618;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 50rpx;
+  color: #fff;
+  margin: 300rpx auto;
+}
+.widthbtn{
+  width: 550rpx;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  text-align: center;
+  font-size: 32rpx;
+  background:#CA0618;
+  color: #fff; 
+  border: 1rpx solid #CA0618;
+  margin: 30rpx auto;
+}
+.widthbtn.wbg{
+  color: #CA0618;
+  background: #fff;
+}
+.article{
+  padding: 20rpx 30rpx;
+}
+.loading{
+  text-align: center;
+}

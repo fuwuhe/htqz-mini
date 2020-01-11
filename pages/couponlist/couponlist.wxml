@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<import src='../../component/coupon.wxml' />
+<view class="container">
+  <view class="couponlist">
+      <template is="coupen" wx:for="{{coupenlist}}" wx:key="index" wx:for-item="coupen" data="{{coupen}}"></template>
+  </view>
+</view>

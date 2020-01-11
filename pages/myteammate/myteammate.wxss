@@ -1,0 +1,30 @@
+@import '../../component/empty.wxss';
+scroll-view{
+  height: 100vh;
+}
+.matelist{
+  width: 690rpx;
+  height: 140rpx;
+  border-bottom: 1rpx solid #e6e6e6;
+  display: flex;
+  padding: 0 30rpx;
+  background: #fff;
+  align-items: center;
+}
+.matelist image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+}
+.matelist .name{
+  flex: 1;
+  font-size: 32rpx;
+  color: #333333;
+}
+.matelist .phone{
+  flex: 4;
+  color: #676767;
+  font-size: 26rpx;
+  text-align: right;
+}

@@ -1,0 +1,111 @@
+.order {
+  width: 690rpx;
+  margin: 20rpx auto;
+  padding: 0rpx 30rpx;
+  background: #fff;
+}
+
+.order .head {
+  width: 100%;
+  border-bottom: 2px solid #ededed;
+  line-height: 80rpx;
+}
+
+.order .head:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.order .head .num {
+  float: left;
+  font-size: 26rpx;
+  color: #333;
+}
+
+.order .head .time {
+  float: right;
+  color: #999;
+  font-size: 24rpx;
+}
+
+.order .body {
+  padding: 30rpx 0;
+}
+
+.order .body:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.order .body image {
+  float: left;
+  width: 170rpx;
+  height: 150rpx;
+  border-radius: 10rpx;
+}
+
+.order .body .con {
+  float: left;
+  margin-left: 30rpx;
+}
+
+.order .body .con .line1 {
+  color: #333;
+  font-size: 30rpx;
+}
+
+.order .body .con .line2 {
+  color: #ca0618;
+  font-size: 30rpx;
+  margin-top: 70rpx;
+}
+.distribution{
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border: 1rpx solid #ddd;
+}
+.distribution view{
+  font-size: 26rpx;
+  color: #333333;
+  line-height: 56rpx;
+}
+.distribution .title{
+  flex: 2;
+  background: #EEEEEE;
+  text-align: center;
+}
+.distribution .con{
+  flex: 3;
+  text-indent: 12rpx;
+}
+.line{
+  width: 750rpx;
+  position: relative;
+  left: -30rpx;
+  height: 2rpx;
+  background: #e6e6e6;
+  margin: 30rpx auto 0;
+}
+.cashs{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  line-height: 80rpx;
+  justify-content: space-between
+}
+.cashs .blk text:nth-child(1){
+  color: #666666;
+  font-size: 24rpx;
+}
+.cashs .blk text:nth-child(2){
+  color: #CA0618;
+  font-size: 24rpx;
+}

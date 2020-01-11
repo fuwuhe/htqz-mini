@@ -1,0 +1,91 @@
+<import src='../../component/coupon.wxml' />
+<import src='../../wxParse/wxParse.wxml' />
+<!--activity.wxml-->
+<view class="container">
+  <image  class='musicicon {{mclass?"animate":""}}' bindtap="Playmusic" src="/images/music@2x.png"></image>
+  <image class="banner" src="{{bannersrc}}"></image>
+  <view class="displayarea">
+    <view class="whiteblk">
+      <view class="blocktitle">参与人数(
+        <span>{{joinnum}}</span>人)</view>
+      <view class="blklist joinlist">
+        <ul>
+          <li wx:for="{{joinList}}" wx:key="index">
+            <image src="{{item.avatar}}"></image>
+            <span>{{item.nickname}}</span>
+          </li>
+        </ul>
+      </view>
+    </view>
+    <image class="titleimg" src="/images/business.png"></image>
+    <view class="businesstip">（排名不分先后）</view>
+    <view class="whiteblk">
+      <view class="blocktitle">合作商家(
+        <span>{{shopnum}}</span>家)</view>
+      <view class="blklist">
+        <ul>
+          <li bindtap="Click2detail" wx:for="{{shopList}}" data-id="{{item.id}}" wx:key="index">
+            <image src="{{item.src}}"></image>
+            <span>{{item.name}}</span>
+          </li>
+        </ul>
+      </view>
+    </view>
+    <view class="tip">点击商家头像查看详细信息</view>
+    <view class="whiteblk" wx:if='{{recordlist}}' style="padding-bottom:20rpx;">
+      <view class="blocktitle">
+        购买记录(<span>{{recordlist.length}}</span>人)
+        <view class="swiperarea" style='height:{{recordlist.length<=4?recordlist.length*130:520}}rpx'> 
+          <swiper class="recordswiper" indicatordots="false" display-multiple-items='{{displaynum}}' autoplay="true" vertical="true" >
+            <swiper-item wx:for="{{recordlist}}" wx:key="index">
+             <view class="recordblk">
+               <image src="{{item.recordsrc}}"></image>
+               <view class="rightcon">
+                 <view class="lineone">
+                   <view class="name">{{item.name}}</view>
+                   <view class="price">已经支付 ￥{{item.price}}</view>
+                 </view>
+                 <view class="linetwo">
+                   <view class="theme">{{item.theme}}</view>
+                   <view class="time">{{item.time}}</view>
+                 </view>
+               </view>               
+             </view>
+            </swiper-item>
+          </swiper>
+        </view>
+      </view>      
+    </view>    
+    <view class="sectip">
+       注：点任一链接抢购成功后       可享受所有活动商家优惠
+    </view>
+    <view class="couponlist">
+      <view bindtap="Click2coupondetail" wx:for="{{coupenlist}}"  wx:key="index" wx:for-item="coupen" data-id="{{coupen.id}}">
+        <template is="coupen" data="{{coupen}}"></template>
+      </view>
+      
+    </view>
+    <image class="titleimg" src="/images/red_envelopes.png"></image>
+    <view class="whiteblk">
+      <view class="ranktitle">——赚钱排行榜——</view>
+      <view class="ranktable">
+        <view class="thead">
+           <view class="td">排名</view>
+           <view class="td">推荐数</view>
+           <view class="td">佣金（元）</view>
+        </view>
+        <view class="tbody" wx:for="{{ranklist}}" wx:key="index">
+           <view class="td">{{item.nickname}}</view>
+           <view class="td">{{item.invite_num}}人</view>
+           <view class="td red">{{item.total_balance}}</view>
+        </view>
+      </view>
+    </view>
+    <image class="titleimg" src="/images/activity_rules.png"></image>
+    <view class="article">
+       <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+    <view class="phone">服务热线：400 677 6763</view>
+  </view>
+  <view catchtap="Clcik2buy" class='botbtn {{(giftstatus == 0 || giftstatus == null)?"":"clicked"}}'>{{(giftstatus == 0 || giftstatus == null)?"立即购买":"已购买"}}</view>
+</view>

@@ -1,0 +1,6 @@
+<!--logs.wxml-->
+<view class="container">
+  <image src="http://htqzqny.0791jr.com/uploads/20200109/FnpRJfCja_3FQoDcKQt97c8mz1T7.png"></image>
+  <view style="margin-top:0rpx;" class="widthbtn" bindtap="Intoclient">进入客户端</view>
+  <view class="widthbtn wbg" bindtap="Intobusiness">进入商家端</view>
+</view>

@@ -1,0 +1,9 @@
+<!--logs.wxml-->
+<view class="container">
+   <view class="blk">
+     <image src="/images/submit-pro@2x.png"></image>
+     <view class="tip1">您的提现申请已提交 </view>
+     <view class="tip2">预计1到2个工作日处理成功 请耐心等待</view>
+   </view>
+   <view class="addbtn" bindtap="Back2index">返回主页</view>
+</view>

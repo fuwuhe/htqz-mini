@@ -1,0 +1,73 @@
+@import '../../component/seccoupon.wxss';
+@import '../../component/empty.wxss';
+.title {
+  width: 100%;
+  height: 8vh;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+ 
+.title-sel {
+  color: #666666;
+  font-size: 32rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  position: relative;
+}
+ 
+.title-sel  .line-style{
+  background: #fff;
+  height: 6rpx;
+  width: 40rpx;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%)
+}
+ 
+.title-sel-selected{
+  color: #CA0618;
+  font-size: 32rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  position: relative;
+}
+.title-sel-selected .line-style{
+  background: #CA0618;
+  height: 4rpx;
+  width: 120rpx;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%)
+}
+ 
+.swiper {
+  width: 100%;
+  height: 92vh;
+  flex: 1;
+  overflow: scroll;
+  margin: 0 auto;
+  background: rgb(245, 245, 245)
+}
+ 
+.record-item {
+  margin-top: 10rpx;
+  background-color: white;
+  padding-bottom: 5rpx;
+  padding-top: 5rpx;
+  font-size: 30rpx;
+}
+ 
+.name{
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #eee;
+  padding: 2vh;
+  border-radius: 10rpx
+}
+scroll-view{
+  height: 100%;
+}

@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<import src='../../component/empty.wxml' />
+<import src='../../component/order.wxml' />
+<view class="container">
+   <scroll-view scroll-y bindscrolltolower="Scrolltolower">
+   <template wx:if="{{orderlist.length==0}}" is="empty" data="{{emptyTip}}"></template>
+  <view class="couponlist">      
+      <view bindtap="Click2detail" wx:for="{{orderlist}}" wx:key="index" wx:for-item="order" data-id="{{order.id}}">
+        <template is="order" data="{{order}}"></template>
+      </view>
+  </view>
+  </scroll-view>
+</view>

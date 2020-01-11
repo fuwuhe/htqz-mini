@@ -1,0 +1,12 @@
+<!--logs.wxml-->
+<import src='../../wxParse/wxParse.wxml' />
+<view class="container">
+   <view class="bg">
+     <view class="box">
+       <image src="/images/fx_gz_title@2x.png"></image>
+       <view class="article">
+          <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+       </view>
+     </view> 
+   </view>
+</view>

@@ -1,0 +1,42 @@
+<!--logs.wxml-->
+<import src='../../component/empty.wxml' />
+<import src='../../component/seccoupon.wxml' />
+<view class="container">
+  <scroll-view scroll-y>
+    <view class="title">
+      <view class="{{0 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='0'>
+        <text>待核销({{firstList.length}})</text>
+        <hr class="line-style" />
+      </view>
+
+      <view class="{{1 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='1'>
+        <text>已核销({{secondList.length}})</text>
+        <hr class="line-style" />
+      </view>
+      <view class="{{2 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='2'>
+        <text>已过期({{thirdList.length}})</text>
+        <hr class="line-style" />
+      </view>
+    </view>
+    <swiper class='swiper' bindchange='pagechange' current='{{currentIndex}}'>
+      <swiper-item class='swiper'>
+        <scroll-view scroll-y bindscrolltolower="Firstscroll">
+          <template is="seccoupon" wx:for="{{firstList}}" wx:key="index" wx:for-item="seccoupon" data="{{seccoupon}}"></template>
+          <template wx:if="{{firstList.length == 0}}" is="empty" data="{{emptyTip}}"></template>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item class='swiper' class='swiper'>
+        <scroll-view scroll-y lower-threshold="50" bindscrolltolower="Secondscroll">
+          <template is="seccoupon" wx:for="{{secondList}}" wx:key="index" wx:for-item="seccoupon" data="{{seccoupon}}"></template>
+          <template wx:if="{{secondList.length == 0}}" is="empty" data="{{emptyTip}}"></template>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item class='swiper' class='swiper'>
+        <scroll-view scroll-y bindscrolltolower="Thirdscroll">
+          <template is="seccoupon" wx:for="{{thirdList}}" wx:key="index" wx:for-item="seccoupon" data="{{seccoupon}}"></template>
+          <template wx:if="{{thirdList.length == 0}}" is="empty" data="{{emptyTip}}"></template>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </scroll-view>
+</view>

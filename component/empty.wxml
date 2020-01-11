@@ -1,0 +1,8 @@
+<template name="empty">  
+  <view class='empty-hints'>
+    <view class='empty-imgbox'>
+      <image src="{{emptyTip.imgUrl}}" mode='widthFix'></image>
+    </view>
+    <view class='empty-font'>{{emptyTip.font}}</view>
+  </view>
+</template>

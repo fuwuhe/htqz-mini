@@ -1,0 +1,33 @@
+<!--logs.wxml-->
+<template name="order">
+  <view class="order">
+    <view class="head">
+      <view class="num">订单编号：<span>{{order.numbers}}</span></view>
+      <view class="time">{{order.time}}</view>
+    </view>
+    <view class="body">
+      <image src="{{order.src}}"></image>
+      <view class="con">
+        <view class="line1">{{order.theme}}</view>
+        <view class="line2">￥{{order.price}}</view>
+      </view>
+    </view>
+    <view wx:if='{{order.for == "distribution"}}' class="distribution">
+      <view class="title">下单人</view>
+      <view class="con">{{order.person}}</view>
+      <view class="title">手机号</view>
+      <view class="con">{{order.phone}}</view>
+    </view>
+    <view wx:if='{{order.for == "distribution"}}' class="line"></view>
+    <view wx:if='{{order.for == "distribution"}}' class="cashs">
+      <view class="blk">
+        <text>结算金额：</text>
+        <text>￥{{order.settle}}</text>
+      </view>
+      <view class="blk">
+        <text>预计收入：</text>
+        <text>￥{{order.expect}}</text>
+      </view>
+    </view>
+  </view>
+</template>

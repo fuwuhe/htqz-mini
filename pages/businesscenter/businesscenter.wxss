@@ -1,0 +1,34 @@
+
+.banner{
+  width: 100%;
+  height: 400rpx;
+  text-align: center;
+  line-height: 400rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #fff;
+  background: #CA0618;
+}
+.icons{
+  width: 100%;
+  display: flex;
+  background: #fff;
+  padding: 100rpx 0 50rpx;
+}
+.icons .blk{
+  flex: 1;
+  position: relative;
+  padding-top: 150rpx;
+  text-align: center;
+}
+.icons .blk image{
+  margin: 0 auto;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+}
+.icons .blk view{
+  color: #333333;
+  font-size: 28rpx;
+}

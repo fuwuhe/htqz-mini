@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="indexlist">
+    <scroll-view scroll-y bindscrolltolower="Scrolltolower">
+      <view class="ul">
+        <view bindtap="Click2activity" class="li" wx:for="{{indexlist}}" data-id="{{item.id}}" wx:key="index" data-title="{{item.title}}" wx:if="{{item.now == 'no'}}">
+          <image src="{{item.img}}"></image>
+          <view class="content">
+            <view class="leftcon">
+              <view class="title">{{item.title}}</view>
+              <view class="price">
+                ￥
+                <span>{{item.price}}</span>
+              </view>
+            </view>
+            <view class="rightcon">还剩
+              <view class="timebox">{{item.hour}}</view>:
+              <view class="timebox">{{item.minute}}</view>:
+              <view class="timebox">{{item.second}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{loading}}" class="loading">加载中。。。</view>
+    </scroll-view>
+  </view>
+</view>

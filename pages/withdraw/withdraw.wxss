@@ -1,0 +1,61 @@
+.forms{
+  background: #fff;
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  font-size: 30rpx;
+  color: #333333;
+  padding: 0 30rpx;
+  font-weight: 500;
+  margin-bottom: 20rpx;
+}
+.forms text{
+  margin-right: 40rpx;
+}
+.forms.between{
+  justify-content: space-between;
+}
+.forms>input{
+  text-align: right;
+}
+.forms image{
+  width: 12rpx;
+  height: 24rpx;
+}
+.forms .bankinput{
+  display: flex;
+  align-items: center;
+}
+.forms .bankinput input{
+  width: 400rpx;
+}
+.withdrawzone{
+  padding: 20rpx 30rpx;
+  background: #fff;
+}
+.withdrawzone .title{
+  font-size: 32rpx;
+  color: #202020;
+}
+.withdrawzone .input{
+  display: flex;
+  align-items: center;
+  height: 160rpx;
+  border-bottom: 1rpx solid #e6e6e6;
+  font-size: 88rpx;
+}
+.withdrawzone .input input{
+  height: 120rpx;
+}
+.withdrawzone .bot{
+  display: flex;
+  font-size: 24rpx;
+  color: #999999;
+  line-height: 80rpx;
+  justify-content: space-between;
+  font-weight: 500;
+  letter-spacing: 2rpx;
+}
+.withdrawzone .bot .left text{
+  color: #0C5CFF;
+}

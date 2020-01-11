@@ -1,0 +1,242 @@
+.bgpic {
+  width: 100%;
+  height: 800rpx;
+  margin-bottom: 20rpx;
+}
+
+.bg {
+  width: 100%;
+  height: 1800rpx;
+  background: linear-gradient(#a20b0b 0%, #a20b0b 50%, #ca0618 100%);
+}
+
+.torule {
+  position: fixed;
+  top: 30rpx;
+  width: 200rpx;
+  text-indent: 30rpx;
+  right: -30rpx;
+  line-height: 60rpx;
+  border-radius: 40rpx;
+  font-size: 30rpx;
+  color: #fff;
+  background: #ff9d45;
+  z-index: 5;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+  font-size: 36rpx;
+  margin-top: ;
+}
+
+.title image {
+  width: 43rpx;
+  height: 32rpx;
+  margin: 0 15rpx;
+}
+
+.tribox {
+  width: 703rpx;
+  height: 244rpx;
+  background: #a20b0b;
+  display: flex;
+  text-align: center;
+  margin: 20rpx auto 50rpx;
+  position: relative;
+  color: #b97f43;
+  font-size: 30rpx;
+}
+
+.tribox .bgimg {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+
+.tribox .row {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  top: 80rpx;
+}
+
+.tribox .line {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 117rpx;
+  z-index: 2;
+}
+
+.tribox .row view span {
+  color: #ff3c34;
+}
+
+.tribox .row view {
+  margin-top: 20rpx;
+}
+
+.box {
+  width: 700rpx;
+  padding: 50rpx 0;
+  text-align: center;
+  display: flex;
+  position: relative;
+  color: #b97f43;
+  border-radius: 20rpx;
+  margin: 20rpx auto;
+  background: #fff;
+  font-size: 30rpx;
+}
+
+.box .row {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.box .row view {
+  margin-top: 20rpx;
+}
+
+.box .row .index {
+  width: 50rpx;
+  background: #b97f43;
+  text-align: center;
+  line-height: 50rpx;
+  color: #fff;
+  margin: 0 auto 30rpx;
+  border-radius: 50%;
+}
+
+.dottedline {
+  position: absolute;
+  width: 480rpx;
+  height: 1rpx;
+  border-bottom: 1rpx dotted #b97f43;
+  top: 75rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.shareabtn {
+  width: 700rpx;
+  line-height: 100rpx;
+  font-size: 36rpx;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(#feb14e, #ff7a1b);
+  margin: 80rpx auto;
+  border-radius: 50rpx;
+  font-weight: bold;
+  text-shadow: 1rpx 1rpx 1rpx 2rpx #eee;
+}
+
+.cover {
+  position: fixed;
+  width: 750rpx;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  display: none;
+  transition: all 0.3s;
+}
+
+.cover.active {
+  display: block;
+}
+
+.layer {
+  width: 100%;
+  height: 400rpx;
+  background: #fff;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  position: fixed;
+  bottom: -400rpx;
+  left: 0;
+  z-index: 15;
+  transition: all 0.3s;
+}
+
+.layer.active {
+  bottom: 0;
+}
+
+.layer .close {
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  top: 20rpx;
+  right: 30rpx;
+}
+
+.layer .titles {
+  width: 100%;
+  color: #333;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 100rpx;
+  border-bottom: 1rpx solid #e6e6e6;
+}
+
+.layer .layerbox {
+  width: 100%;
+  display: flex;
+}
+
+.layer .layerbox .row {
+  flex: 1;
+  color: #999;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.layer .layerbox .row image {
+  width: 110rpx;
+  height: 110rpx;
+  display: block;
+  margin: 50rpx auto 30rpx;
+}
+
+.imagePathBox {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+}
+
+.postimg {
+  width: 80%;
+  height: 80%;
+  margin: 30rpx auto;
+  display: block;
+}
+
+.saveimg {
+  line-height: 80rpx;
+  background: linear-gradient(#feb14e, #ff7a1b);
+  font-size: 32rpx;
+  border-radius: 44rpx;
+  width: 80%;
+  text-align: center;
+  margin: 30rpx auto;
+  color: #fff;
+  font-weight: 500;
+}
