@@ -14,7 +14,6 @@ Page({
     article: ''
   },
   onLoad: function(options) {
-    console.log(options)
     var that = this;
     wx.request({
       url: util.Baseurl + '/merchants/detail',
@@ -59,28 +58,5 @@ Page({
         })
       }
     })
-    // wx.getLocation({
-    //   type: 'wgs84',
-    //   success: function(res) {
-    //     demo.reverseGeocoder({
-    //       location: {
-    //         latitude: res.latitude,
-    //         longitude: res.longitude
-    //       },
-    //       success: function(resp) {
-    //         wx.openLocation({
-    //           latitude: 28.685272,
-    //           longitude: 115.8883,
-    //           name: that.data.shopname,
-    //           address: that.data.location,
-    //           scale: 18
-    //         })
-    //       },
-    //       fail: function(res) {
-    //         console.log(res);
-    //       },
-    //     })
-    //   }
-    // })
   }
 })

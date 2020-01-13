@@ -35,8 +35,8 @@ Page({
       width: '50',
       height: '50'
     }],
-    username: "",
-    avatar: ""
+    username: "用户昵称",
+    avatar: "/images/default_avatar.png"
   },
   onLoad: function() {    
     var that = this;
@@ -47,8 +47,7 @@ Page({
       })
     }
   },
-  onShow:function(){
-    
+  onShow:function(){    
     if (app.globalData.userInfo == null){
       wx.showModal({
         title: '温馨提示',

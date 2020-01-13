@@ -189,7 +189,6 @@ Page({
             gift_id: this.data.optionsid
           },
           success: function(res) {
-            console.log(res)
             wx.navigateTo({
               url: '/pages/coupondetail/coupondetail?id=' + e.currentTarget.dataset.id,
             })
@@ -275,7 +274,6 @@ Page({
           gift_id: this.data.optionsid
         },
         success: function(res) {
-          console.log(res)
           if (res.data.code == 1) {
             that.Loadcoupon();
           } else {

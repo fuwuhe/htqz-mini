@@ -14,7 +14,6 @@ Page({
     article:''
   },
   onLoad: function(options) {
-    console.log(options)
     var that = this;
     wx.request({
       url: util.Baseurl + '/merchants/detail',
@@ -50,7 +49,6 @@ Page({
     demo.geocoder({
       address: that.data.location,
       success:function(res){
-        console.log(res);
         wx.openLocation({
           latitude: res.result.location.lat,
           longitude: res.result.location.lng,

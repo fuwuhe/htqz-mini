@@ -41,6 +41,7 @@ Page({
             coupenlist: list,
             gift_status: res.data.data.gift_status
           })
+
         }
       }
     })

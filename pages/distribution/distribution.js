@@ -56,7 +56,6 @@ Page({
         token:app.globalData.logindata.token
       },
       success:function(res){
-        console.log(res)
         if(res.data.code == 1){
           that.setData({
             avatar: res.data.data.avatar,
@@ -91,7 +90,6 @@ Page({
     })
   },
   Distributenow: function() {
-    console.log(1)
     wx.navigateTo({
       url: '/pages/withdraw/withdraw',
     })

@@ -19,7 +19,6 @@ Page({
         token: getApp().globalData.logindata.token,
       },
       success:function(res){
-        console.log(res)
         if(res.data.code == 1){
           that.setData({
             balance: res.data.data.balance,
@@ -58,7 +57,7 @@ Page({
     }
   },
   InputNum: function(e) {
-    console.log(e)
+    
   },
   BlurNum: function(e) {
     this.setData({
@@ -91,7 +90,6 @@ Page({
               money: this.data.withdrawnum,
             },
             success:function(res){
-              console.log(res)
               if(res.data.code == 1){
                 wx.navigateTo({
                   url: '/pages/withdrawresult/withdrawresult',

@@ -9,7 +9,6 @@ Page({
     id:''
   },
   onLoad: function(options) {
-    console.log(options)
     if (options.title){
       this.setData({
         title: options.title,

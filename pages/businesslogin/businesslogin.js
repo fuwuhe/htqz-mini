@@ -57,7 +57,7 @@ Page({
             wx.showToast({
               title: suc.data.msg,
               icon: 'none',
-              duration: 1000
+              duration: 1500
             })
           } else {
             getApp().globalData.merchants_id = suc.data.data

@@ -104,7 +104,7 @@ Page({
         wx.getImageInfo({
           src: that.data.qrcode,
           success: function (re) {
-            context.drawImage(re.path, 104, 452, 167, 167);
+            context.drawImage(re.path, 104, 450, 167, 167);
             context.draw();
             setTimeout(function () {
               wx.canvasToTempFilePath({

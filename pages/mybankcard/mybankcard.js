@@ -78,7 +78,6 @@ Page({
               bank_id: e.currentTarget.dataset.id
             },
             success:function(res){
-               console.log(res)
                if(res.data.code == 1){
                  that.Loadlist()
                }else{
@@ -90,7 +89,7 @@ Page({
             }
           })
         } else if (res.cancel) {
-          console.log('用户点击取消')
+         
         }
       }
     })

@@ -11,7 +11,6 @@ Page({
     cardnum: ""
   },
   bindPickerChange: function(e) {
-    console.log(e.detail.value)
     this.setData({
       index: e.detail.value
     })
@@ -40,7 +39,6 @@ Page({
     wx.request({
       url: util.Baseurl + '/bank/bank_list',
       success:function(res){
-         console.log(res)
          if(res.data.code == 1){
            var resdata = res.data.data;
            var list = [];
