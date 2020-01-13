@@ -41,7 +41,7 @@ Page({
   onLoad: function() {    
     var that = this;
     app.TestFun();
-    if (wx.getStorageSync('phonenum') != ''){
+    if (app.globalData.userInfo != null && wx.getStorageSync('phonenum') != ''){
       that.setData({
         phonenum: util.PhonenumEncrypt(wx.getStorageSync('phonenum'))
       })
@@ -108,6 +108,11 @@ Page({
                     }
                   })
                 }                
+              } else {
+                wx.showToast({
+                  title: '网络错误，请再试一次',
+                  icon: 'none'
+                })
               }
             }
           })

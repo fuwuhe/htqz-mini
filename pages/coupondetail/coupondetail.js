@@ -1,4 +1,3 @@
-//logs.js
 var QQMapWX = require('../../utils/qqmap-wx-jssdk.min.js');
 var WxParse = require('../../wxParse/wxParse.js');
 const util = require('../../utils/util.js')
@@ -41,7 +40,6 @@ Page({
         }
       }
     })
-
     WxParse.wxParse('article', 'html', this.data.article, this, 5);
   },
   OpenLocation: function () {

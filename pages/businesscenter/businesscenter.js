@@ -11,7 +11,7 @@ Page({
     wx.request({
       url: util.Baseurl + '/merchants/center',
       data: {
-        merchants_id: 73,
+        merchants_id: getApp().globalData.merchants_id,
       },
       header: {
         'content-type': 'application/json' // 默认值

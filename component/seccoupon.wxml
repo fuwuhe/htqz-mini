@@ -2,8 +2,8 @@
 <template name="seccoupon">
   <view class="order">
     <view class="head">
-      <image class="logo" src="{{seccoupon.avatar}}"></image>
-      <text>{{seccoupon.name?seccoupon.name:''}}</text>
+      <image class="logo" src="{{seccoupon.avatar?seccoupon.avatar:'/images/default_avatar.png'}}"></image>
+      <text>{{seccoupon.name?seccoupon.name:'用户昵称'}}</text>
     </view>
     <view class="body">
       <image class="logo" src="{{seccoupon.logo}}"></image>

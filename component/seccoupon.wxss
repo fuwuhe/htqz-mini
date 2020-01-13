@@ -22,7 +22,7 @@
   width: 650rpx;
   height: 170rpx;
   margin-top: 20rpx;
-  border-radius: 15rpx;
+  border-radius: 10rpx;
   box-shadow: 0 0 2rpx 3rpx rgb(244, 244, 244);
   position: relative;
   display: flex;
@@ -70,8 +70,8 @@
   height: 170rpx;
   background: #CA0618;
   z-index: 1;
-  border-top-right-radius: 15rpx;
-  border-bottom-right-radius: 15rpx;
+  border-top-right-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
 }
 .order .body .right.used{
   background: #BBBBBB
