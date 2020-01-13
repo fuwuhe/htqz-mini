@@ -4,7 +4,7 @@ Page({
 
   },
   onLoad: function () {
-
+     
   },
   Intoclient:function(){
     wx.switchTab({

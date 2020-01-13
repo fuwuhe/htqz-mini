@@ -48,8 +48,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/promote/promote",
-					"pathName": "pages/promote/promote",
+					"name": "pages/mycenter/mycenter",
+					"pathName": "pages/mycenter/mycenter",
 					"query": "",
 					"scene": null
 				}

@@ -28,9 +28,7 @@ Page({
     var that = this;
     setTimeout(function() {
       if (app.globalData.userInfo) {
-        //  wx.navigateTo({
-        //    url: '/pages/welcome/welcome',
-        //  })
+        
       } else {
         that.setData({
           notauth: true
@@ -56,7 +54,7 @@ Page({
                 'content-type': 'application/json' // 默认值
               },
               success: function(suc) {
-                if (suc.data.msg == "success") {
+                if (suc.data.code == 1) {
                   getApp().globalData.logindata = suc.data.data;
                   getApp().globalData.userInfo = e.detail.userInfo;
                   wx.setStorageSync('token', suc.data.data.token)
