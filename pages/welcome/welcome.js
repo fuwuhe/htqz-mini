@@ -4,11 +4,7 @@ Page({
 
   },
   onLoad: function () {
-    // wx.login({
-    //   success:function(res){
-    //     console.log(res)
-    //   }
-    // })
+
   },
   Intoclient:function(){
     wx.switchTab({

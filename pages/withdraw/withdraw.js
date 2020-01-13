@@ -9,17 +9,17 @@ Page({
     lowest: '',
     bankname: '',
     fromadd: '',
-    bankid:''
+    bankid: ''
   },
   onLoad: function(options) {
     var that = this;
     wx.request({
-      url: util.Baseurl +'/bank/withdraw_info',
-      data:{
+      url: util.Baseurl + '/bank/withdraw_info',
+      data: {
         token: getApp().globalData.logindata.token,
       },
-      success:function(res){
-        if(res.data.code == 1){
+      success: function(res) {
+        if (res.data.code == 1) {
           that.setData({
             balance: res.data.data.balance,
             lowest: res.data.data.min_withdraw,
@@ -36,9 +36,9 @@ Page({
     }
   },
   Withdrawall: function() {
-     this.setData({
-       withdrawnum: this.data.balance
-     })
+    this.setData({
+      withdrawnum: this.data.balance
+    })
   },
   Navtobanklist: function() {
     wx.navigateTo({
@@ -57,7 +57,7 @@ Page({
     }
   },
   InputNum: function(e) {
-    
+
   },
   BlurNum: function(e) {
     this.setData({
@@ -82,21 +82,28 @@ Page({
             duration: 1000
           })
         } else {
-          wx.request({
-            url: util.Baseurl +'/distribution/detailedCommission',
-            data:{
-              token: getApp().globalData.logindata.token,
-              type:1,
-              money: this.data.withdrawnum,
-            },
-            success:function(res){
-              if(res.data.code == 1){
-                wx.navigateTo({
-                  url: '/pages/withdrawresult/withdrawresult',
-                })
+          if ( Number(this.data.withdrawnum) >= this.data.lowest == false) {
+            wx.showToast({
+              title: '提现金额不能少于最低限额！',
+              icon: 'none'
+            })
+          } else if (Number(this.data.withdrawnum) >= this.data.lowest) {
+            wx.request({
+              url: util.Baseurl + '/distribution/detailedCommission',
+              data: {
+                token: getApp().globalData.logindata.token,
+                type: 1,
+                money: this.data.withdrawnum,
+              },
+              success: function(res) {
+                if (res.data.code == 1) {
+                  wx.navigateTo({
+                    url: '/pages/withdrawresult/withdrawresult',
+                  })
+                }
               }
-            }
-          })
+            })
+          }
         }
       }
     } else {
@@ -115,35 +122,38 @@ Page({
         })
       }
       if (this.data.withdrawnum.trim() != '' && this.data.fromadd.trim() != '') {
-        if (!/^[0-9]*$/.test(this.data.withdrawnum)) {
+        if (!/^\+?(\d*\.\d{2})$/.test(this.data.withdrawnum)) {
           wx.showToast({
             title: '请输入正确格式的提现金额',
             icon: 'none',
             duration: 1000
           })
         } else {
-          wx.request({
-            url: util.Baseurl + '/distribution/detailedCommission',
-            data: {
-              token: getApp().globalData.logindata.token,
-              type: 1,
-              money: this.data.withdrawnum,
-              bank_id: this.data.bankid
-            },
-            success: function (res) {
-              if (res.data.code == 1) {
-                wx.navigateTo({
-                  url: '/pages/withdrawresult/withdrawresult',
-                })
+          if (Number(this.data.withdrawnum) >= this.data.lowest == false) {
+            wx.showToast({
+              title: '提现金额不能少于最低限额！',
+              icon: 'none'
+            })
+          } else if (Number(this.data.withdrawnum) >= this.data.lowest) {
+            wx.request({
+              url: util.Baseurl + '/distribution/detailedCommission',
+              data: {
+                token: getApp().globalData.logindata.token,
+                type: 1,
+                money: this.data.withdrawnum,
+                bank_id: this.data.bankid
+              },
+              success: function(res) {
+                if (res.data.code == 1) {
+                  wx.navigateTo({
+                    url: '/pages/withdrawresult/withdrawresult',
+                  })
+                }
               }
-            }
-          })
+            })
+          }
         }
       }
     }
-    // wx.navigateBack({
-    //   delta:1
-    // })
-    
   }
 })
