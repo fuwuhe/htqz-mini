@@ -21,9 +21,7 @@ Page({
         fromwd: false
       })
     }
-    var that = this;
-    //var token = app.globalData.logindata.token
-    
+    var that = this;    
   },
   Loadlist:function(){
     var that = this;
@@ -61,7 +59,7 @@ Page({
     })
   },
   onShow:function(){    
-    this.Loadlist()
+    this.Loadlist();
   },
   Unbindcard: function(e) {
     var that = this;

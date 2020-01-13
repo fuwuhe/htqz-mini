@@ -19,7 +19,8 @@ Page({
     wx.request({
       url: util.Baseurl + '/index/gift_detail',
       data: {
-        gift_id: this.data.id
+        gift_id: this.data.id,
+        token: getApp().globalData.logindata.token
       },
       success: function (res) {
         if (res.data.code == 1) {

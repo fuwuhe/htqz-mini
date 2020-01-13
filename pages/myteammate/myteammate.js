@@ -45,7 +45,7 @@ Page({
           for (var i = 0; i < resdata.length; i++) {
             list.push({
               avatar: resdata[i].avatar,
-              name: resdata[i].username,
+              name: resdata[i].nickname,
               phone: util.PhonenumEncrypt(resdata[i].mobile),
               id: resdata[i].id
             })
