@@ -5,7 +5,7 @@ const app = getApp()
 Page({
   data: {
     emptyTip: {
-      imgUrl: '../../images/my_order_empty@2x.png',
+      imgUrl: '../../images/bank_card_empty@2x.png',
       font: '还没有银行卡，快去添加吧~'
     },
     fromwd: true,
