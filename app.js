@@ -2,8 +2,8 @@
 const util = require('utils/util.js')
 App({
   onLaunch: function(options) {
-    var pid = options.query.id;
-    this.globalData.pid = options.query.id;
+    var pid = options.query.pid;
+    this.globalData.pid = options.query.pid;
     var that = this;
     wx.getSetting({
       success: res => {
