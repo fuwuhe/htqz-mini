@@ -5,14 +5,15 @@ Page({
   data: {
     tipword: '',
     imgsrc: '/images/submit-pro@2x.png',
-    leftword:''
+    leftword:true
   },
   onLoad: function(options) {
     if (options.result == "fail") {
       this.setData({
         tipword: '核销失败',
         imgsrc: '/images/fail@2x.png',
-        leftword: '重新核销'
+        leftbtn:false,
+
       })
       wx.setNavigationBarTitle({
         title: "核销失败"
@@ -21,7 +22,7 @@ Page({
       this.setData({
         tipword: '核销成功',
         imgsrc: '/images/submit-pro@2x.png',
-        leftword: '返回首页'
+        leftbtn: true
       })
       wx.setNavigationBarTitle({
         title: "核销成功"

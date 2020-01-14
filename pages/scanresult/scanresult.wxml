@@ -6,10 +6,10 @@
   </view>
   <view class="btnarea">
     <view class="half">
-      <view class="left" bindtap="Back2index">{{leftword}}</view>
+      <view class="left" bindtap="Back2index">{{leftbtn?"返回首页":"重新核销"}}</view>
     </view>
-    <view class="half">
-      <view class="right" bindtap="Continue">继续核销</view>
+    <view class="half" wx:if="{{leftbtn}}">
+      <view class="right"  bindtap="Continue">继续核销</view>
     </view>
   </view>
 </view>
