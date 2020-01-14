@@ -43,7 +43,6 @@ Page({
       onlyFromCamera: false,
       success(res) {
         var obj = util.getQueryObject(res.result);
-        console.log(obj)
         wx.request({
           url: util.Baseurl +'/merchants/write_after',
           data:{
@@ -54,7 +53,6 @@ Page({
             user_id: obj.user_id,
           },
           success:function(res){
-            console.log(res);
             if (res.data.code == 1){
                wx.navigateTo({
                  url: '/pages/scanresult/scanresult?result=success',

@@ -49,8 +49,8 @@
 				{
 					"id": 0,
 					"name": "pages/welcome/welcome",
-					"pathName": "pages/welcome/welcome",
-					"query": "result=fail",
+					"pathName": "pages/index/index",
+					"query": "pid=214",
 					"scene": null
 				}
 			]

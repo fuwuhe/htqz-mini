@@ -10,7 +10,8 @@ Page({
     },
     page:1
   },
-  LoadList:function(page){
+  LoadList:function(page,from){
+    var that = this;
      wx.request({
        url: util.Baseurl +'/distribution/rebateOrder',
        data:{
@@ -47,12 +48,12 @@ Page({
                time: util.Num2time(resdata[i].create_time),
                src: resdata[i].image,
                theme: resdata[i].title,
-               price: resdata[i].money,
+               price: resdata[i].act_pay_money,
                for: "distribution",
                person: resdata[i].nickname,
                phone: util.PhonenumEncrypt(resdata[i].mobile),
-               settle: resdata[i].id,
-               expect: resdata[i].id
+               settle: resdata[i].act_pay_money,
+               expect: resdata[i].money
              })
            }
            that.setData({

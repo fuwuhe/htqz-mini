@@ -61,7 +61,12 @@ Page({
       }
     })
   },
-  onLoad: function() {
+  onLoad: function(options) {
+    if (options.pid) {
+      getApp().globalData.pid = decodeURIComponent(options.pid);      
+    }else{
+      getApp().globalData.pid = util.getQueryObject(decodeURIComponent(options.q)).pid;
+    }
     var that = this;
     this.LoadList(this.data.page)
     // 倒计时

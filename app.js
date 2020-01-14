@@ -2,8 +2,6 @@
 const util = require('utils/util.js')
 App({
   onLaunch: function(options) {
-    var pid = options.query.pid;
-    this.globalData.pid = decodeURIComponent(options.query.pid);
     var that = this;
     wx.getSetting({
       success: res => {
@@ -22,7 +20,7 @@ App({
                         code: resp.code,
                         nickname: res.userInfo.nickName,
                         avatar: res.userInfo.avatarUrl,
-                        pid: options.query.id
+                        pid: this.globalData.pid
                       },
                       header: {
                         'content-type': 'application/json' // 默认值

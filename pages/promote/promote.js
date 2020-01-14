@@ -90,6 +90,11 @@ Page({
   onShareAppMessage:function(){
     this.Closelayer();
     this.Inviteresult();
+    return{
+      title:'鸿图圈子',
+      path: '/pages/index/index?pid=' + getApp().globalData.logindata.id,
+      imageUrl: 'http://htqzqny.0791jr.com/uploads/20200109/FnpRJfCja_3FQoDcKQt97c8mz1T7.png'
+    }
   },
   //canvas 生成海报
   CreateCanvas:function(){
