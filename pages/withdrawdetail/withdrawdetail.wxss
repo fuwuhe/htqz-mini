@@ -8,7 +8,6 @@ scroll-view {
   width: 690rpx;
   padding: 0 30rpx;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   border-bottom: 1rpx solid #e6e6e6;
   height: 120rpx;
@@ -16,16 +15,23 @@ scroll-view {
 }
 
 .withdraw .left {
+  flex: 1;
   color: #666;
   font-size: 24rpx;
+  text-align: left;
 }
 
 .withdraw .mid {
+  flex: 1.5;
+  width: 400rpx;
   color: #333;
   font-size: 28rpx;
+  text-align: center;
 }
 
 .withdraw .right {
+  flex: 1;
+  text-align: right;
   color: #ca0618;
   font-size: 30rpx;
   font-weight: 500;
