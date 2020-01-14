@@ -1,7 +1,9 @@
 //app.js
 const util = require('utils/util.js')
 App({
-  onLaunch: function() {
+  onLaunch: function(options) {
+    var pid = options.query.id;
+    this.globalData.pid = options.query.id;
     var that = this;
     wx.getSetting({
       success: res => {
@@ -19,7 +21,8 @@ App({
                       data: {
                         code: resp.code,
                         nickname: res.userInfo.nickName,
-                        avatar: res.userInfo.avatarUrl
+                        avatar: res.userInfo.avatarUrl,
+                        pid: options.query.id
                       },
                       header: {
                         'content-type': 'application/json' // 默认值
@@ -52,6 +55,7 @@ App({
     logindata: null,
     merchants_id: 0,
     code: '',
-    phonenum: ''
+    phonenum: '',
+    pid:''
   }
 })

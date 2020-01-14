@@ -48,9 +48,9 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/mycenter/mycenter",
-					"pathName": "pages/mycenter/mycenter",
-					"query": "",
+					"name": "pages/welcome/welcome",
+					"pathName": "pages/welcome/welcome",
+					"query": "pid=11",
 					"scene": null
 				}
 			]

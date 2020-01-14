@@ -100,7 +100,8 @@ Page({
               data: {
                 code: res.code,
                 nickname: getApp().globalData.userInfo.nickName,
-                avatar: getApp().globalData.userInfo.avatarUrl
+                avatar: getApp().globalData.userInfo.avatarUrl,
+                pid: getApp().globalData.pid
               },
               header: {
                 'content-type': 'application/json' // 默认值
