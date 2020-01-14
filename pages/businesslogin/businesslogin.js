@@ -41,7 +41,6 @@ Page({
     }
     if (this.data.password.length != '' && this.data.loginname.trim().length != '') {
       var that = this;
-      //18710614188
       wx.request({
         url: util.Baseurl + '/merchants/login',
         data: {

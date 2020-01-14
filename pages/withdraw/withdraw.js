@@ -100,6 +100,11 @@ Page({
                   wx.navigateTo({
                     url: '/pages/withdrawresult/withdrawresult',
                   })
+                }else{
+                  wx.showToast({
+                    title: res.data.msg,
+                    icon:'none'
+                  })
                 }
               }
             })

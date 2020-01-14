@@ -40,12 +40,10 @@ Page({
            WxParse.wxParse('article', 'html', that.data.article, that, 5);
          }
       }
-    })
-    
+    })    
   },
   OpenLocation: function() {
     var that = this;
-    //115.8883,28.685272
     demo.geocoder({
       address: that.data.location,
       success:function(res){

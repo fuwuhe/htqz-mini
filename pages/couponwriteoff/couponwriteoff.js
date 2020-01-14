@@ -13,7 +13,6 @@ Page({
     over:false
   },
   onLoad: function (options) {
-    //wx.getStorageSync('token')
     var that = this;
     wx.request({
       url: util.Baseurl + '/coupon/coupon_detail',
