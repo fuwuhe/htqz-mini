@@ -75,7 +75,7 @@ Page({
         })
       }
       if (this.data.withdrawnum.trim() != '') {
-        if (!/^\+?(\d*\.\d{2})$/.test(this.data.withdrawnum)) {
+        if (/^([^0][0-9]+|0)$/.test(this.data.withdrawnum) == false && /^(([^0][0-9]+|0)\.([0-9]{1,2}))$/.test(this.data.withdrawnum) == false) {
           wx.showToast({
             title: '请输入正确格式的提现金额',
             icon: 'none',
@@ -89,7 +89,7 @@ Page({
             })
           } else if (Number(this.data.withdrawnum) >= this.data.lowest) {
             wx.request({
-              url: util.Baseurl + '/distribution/detailedCommission',
+              url: util.Baseurl + '/bank/apply_withdraw',
               data: {
                 token: getApp().globalData.logindata.token,
                 type: 1,
@@ -122,7 +122,7 @@ Page({
         })
       }
       if (this.data.withdrawnum.trim() != '' && this.data.fromadd.trim() != '') {
-        if (!/^\+?(\d*\.\d{2})$/.test(this.data.withdrawnum)) {
+        if (/^([^0][0-9]+|0)$/.test(this.data.withdrawnum) == false && /^(([^0][0-9]+|0)\.([0-9]{1,2}))$/.test(this.data.withdrawnum) == false) {
           wx.showToast({
             title: '请输入正确格式的提现金额',
             icon: 'none',
@@ -136,10 +136,10 @@ Page({
             })
           } else if (Number(this.data.withdrawnum) >= this.data.lowest) {
             wx.request({
-              url: util.Baseurl + '/distribution/detailedCommission',
+              url: util.Baseurl + '/bank/apply_withdraw',
               data: {
                 token: getApp().globalData.logindata.token,
-                type: 1,
+                type: 2,
                 money: this.data.withdrawnum,
                 bank_id: this.data.bankid
               },
