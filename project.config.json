@@ -50,7 +50,7 @@
 					"id": 0,
 					"name": "pages/welcome/welcome",
 					"pathName": "pages/welcome/welcome",
-					"query": "pid=11",
+					"query": "result=fail",
 					"scene": null
 				}
 			]

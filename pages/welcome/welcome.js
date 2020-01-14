@@ -3,8 +3,11 @@ Page({
   data: {
 
   },
-  onLoad: function () {
-     
+  onLoad: function (options) {
+    if(options.pid){
+      getApp().globalData.pid = decodeURIComponent(options.pid);
+    }
+    
   },
   Intoclient:function(){
     wx.switchTab({

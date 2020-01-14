@@ -24,7 +24,8 @@
     "pages/businessdetail/businessdetail",
     "pages/aboutus/aboutus",
     "pages/activityrule/activityrule",
-    "pages/coupondetail/coupondetail"
+    "pages/coupondetail/coupondetail",
+    "pages/scanresult/scanresult"
   ],
   "window": {
     "backgroundTextStyle": "light",

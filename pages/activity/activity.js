@@ -24,7 +24,6 @@ Page({
     backgroundAudioManager.duration = 60
   },
   onLoad: function(options) {
-
     backgroundAudioManager.play();
     this.setData({
       optionsid: options.id

@@ -72,11 +72,28 @@ const Num2daytime = (num) => {
   var s = (date.getSeconds() + 1 < 10 ? '0' + date.getSeconds() : date.getSeconds());
   return h + mi + s
 }
+ 
+const getQueryObject =(search) => {
+  var search = search.substring(1);
+  var obj = {};
+  var reg = /([^?&=]+)=([^?&=]*)/g;
+  search.replace(reg, function (rs, $1, $2) {
+    var name = decodeURIComponent($1);
+    var val = decodeURIComponent($2);
+    val = String(val);
+    obj[name] = val;
+    return rs;
+  });
+  return obj;
+}
+
 module.exports = {
   formatTime,
   TimeDown,
   PhonenumEncrypt,
   Baseurl,
   Num2date,
-  Num2time
+  Num2time,
+  getQueryObject,
+  Num2daytime,
 }

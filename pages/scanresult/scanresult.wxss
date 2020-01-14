@@ -1,0 +1,46 @@
+/* pages/withdrawresult/withdrawresult.wxss */
+page{
+  background: #fff;
+}
+.blk{
+  width: 100%;
+}
+.blk image{
+  width: 150rpx;
+  height: 150rpx;
+  display: block;
+  margin: 200rpx auto 30rpx;
+}
+.blk .tip1{
+  text-align: center;
+  font-size: 34rpx;
+  color: #333333;
+  letter-spacing: 2rpx;
+}
+.btnarea{
+  display: flex;
+  margin-top: 90rpx; 
+}
+.btnarea .half{
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.btnarea .half>view{
+   width: 220rpx;
+   line-height: 75rpx;
+   text-align: center;
+   font-size: 30rpx;
+   font-weight : 500;
+   border-radius: 50rpx;
+}
+.btnarea .half .left{
+  border: 1px solid #999999;
+  color: #333333;
+}
+.btnarea .half .right{
+  border: 1px solid #F13130;
+  color: #F13130;
+}
+

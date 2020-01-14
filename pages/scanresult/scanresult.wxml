@@ -1,0 +1,15 @@
+<!--logs.wxml-->
+<view class="container">
+  <view class="blk">
+    <image src="{{imgsrc}}"></image>
+    <view class="tip1">{{tipword}} </view>
+  </view>
+  <view class="btnarea">
+    <view class="half">
+      <view class="left" bindtap="Back2index">{{leftword}}</view>
+    </view>
+    <view class="half">
+      <view class="right" bindtap="Continue">继续核销</view>
+    </view>
+  </view>
+</view>

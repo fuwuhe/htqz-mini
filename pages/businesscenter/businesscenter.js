@@ -40,9 +40,32 @@ Page({
   //扫描二维码
   Scancode: function() {
     wx.scanCode({
-      onlyFromCamera: true,
+      onlyFromCamera: false,
       success(res) {
-        
+        var obj = util.getQueryObject(res.result);
+        console.log(obj)
+        wx.request({
+          url: util.Baseurl +'/merchants/write_after',
+          data:{
+            merchants_id: getApp().globalData.merchants_id,
+            coupon_id: obj.coupon_id,
+            gift_id: obj.gift_id,
+            time: obj.time,
+            user_id: obj.user_id,
+          },
+          success:function(res){
+            console.log(res);
+            if (res.data.code == 1){
+               wx.navigateTo({
+                 url: '/pages/scanresult/scanresult?result=success',
+               })
+            }else {
+              wx.navigateTo({
+                url: '/pages/scanresult/scanresult?result=fail',
+              })
+            }
+          }
+        })
       }
     })
   }
