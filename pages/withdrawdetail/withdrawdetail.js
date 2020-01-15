@@ -51,6 +51,7 @@ Page({
               time: util.Num2daytime(resdata[i].createtime),
               towhere: resdata[i].memo,
               num: resdata[i].money,
+              operator: resdata[i].operator
             })
           }
           that.setData({

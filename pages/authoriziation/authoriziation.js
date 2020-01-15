@@ -58,6 +58,7 @@ Page({
                 if (suc.data.code == 1) {
                   getApp().globalData.logindata = suc.data.data;
                   getApp().globalData.userInfo = e.detail.userInfo;
+                  getApp().globalData.mypid = suc.data.data.id
                   wx.setStorageSync('token', suc.data.data.token)
                   if(that.data.from == 'center'){
                     wx.switchTab({

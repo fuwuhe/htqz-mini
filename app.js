@@ -27,6 +27,7 @@ App({
                       },
                       success: function(suc) {
                         if (suc.data.msg == "success") {
+                          that.globalData.mypid = suc.data.data.id
                           that.globalData.logindata = suc.data.data;
                           wx.setStorageSync('token', suc.data.data.token)
                         }
@@ -54,6 +55,7 @@ App({
     merchants_id: 0,
     code: '',
     phonenum: '',
-    pid:''
+    pid:'',
+    mypid: ''
   }
 })

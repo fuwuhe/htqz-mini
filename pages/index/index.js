@@ -114,6 +114,7 @@ Page({
               success: function(suc) {
                 if (suc.data.msg == "success") {
                   getApp().globalData.logindata = suc.data.data;
+                  getApp().globalData.mypid = suc.data.data.id;
                   wx.setStorageSync('token', suc.data.data.token)
                   wx.navigateTo({
                     url: '/pages/activity/activity?title=' + e.currentTarget.dataset.title + '&id=' + e.currentTarget.dataset.id,

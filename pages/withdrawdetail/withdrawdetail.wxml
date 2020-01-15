@@ -9,7 +9,7 @@
          <view class="time">{{item.time}}</view>
       </view>
       <view class="mid">{{item.towhere}}</view>
-      <view class="right">-￥{{item.num}}</view>
+      <view class="right">{{item.operator}}￥{{item.num}}</view>
     </view>
   </scroll-view>
 </view>
