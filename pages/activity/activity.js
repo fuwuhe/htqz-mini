@@ -24,6 +24,7 @@ Page({
     innerAudioContext.loop = true;
   },
   onLoad: function(options) {
+    util.FontFam()
     innerAudioContext.play();
     this.setData({
       optionsid: options.id

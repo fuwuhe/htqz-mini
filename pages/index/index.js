@@ -62,6 +62,7 @@ Page({
     })
   },
   onLoad: function(options) {
+    util.FontFam()
     if (options.pid) {
       getApp().globalData.pid = decodeURIComponent(options.pid);      
     }else{

@@ -13,11 +13,11 @@
       </view>
       <view class="icons">
         <image src="/images/me_fx_customer_z@2x.png"></image>
-        <text>{{member}}人</text>
+        <text class="number">{{member}}人</text>
       </view>
     </view>
     <view class="right">
-      <view class="money">￥{{money}}</view>
+      <view class="money number">￥{{money}}</view>
       <text>预估佣金(元)</text>
       <view bindtap="Distributenow" class="btn">立即提现</view>
     </view>
@@ -25,11 +25,11 @@
   <view class="brokerage">
     <view class="line"></view>
     <view class="blk">
-      <view>{{mybrokerage}}</view>
+      <view class="number">{{mybrokerage}}</view>
       <text>我的佣金(元)</text>
     </view>
     <view class="blk">
-      <view>{{withdraw}}</view>
+      <view class="number">{{withdraw}}</view>
       <text>已提现佣金(元)</text>
     </view>
   </view>

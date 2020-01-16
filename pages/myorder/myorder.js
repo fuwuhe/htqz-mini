@@ -61,6 +61,7 @@ Page({
     })
   },
   onLoad: function() {
+    util.FontFam();
     this.LoadList(this.data.page)
   },
   Scrolltolower:function(){

@@ -217,16 +217,15 @@
   background: rgba(0, 0, 0, 0.7);
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .postimg {
-  width: 80%;
-  height: 80%;
-  margin: 30rpx auto;
+  width: 540rpx;
+  height: 960.5rpx;
   display: block;
 }
 
@@ -235,9 +234,9 @@
   background: linear-gradient(#feb14e, #ff7a1b);
   font-size: 32rpx;
   border-radius: 44rpx;
-  width: 80%;
+  width: 100%;
   text-align: center;
-  margin: 30rpx auto;
+  margin: 30rpx auto 0;
   color: #fff;
   font-weight: 500;
 }

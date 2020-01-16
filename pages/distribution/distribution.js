@@ -98,11 +98,25 @@ Page({
       nav: '/pages/businesswriteoffmng/businesswriteoffmng'
     }]
   },
-
   onLoad: function() {
-
-    
+    util.FontFam()
     var that = this;
+    if (wx.getStorageSync('usertype') == 'business'){
+       wx.request({
+         url: util.Baseurl + '/merchants/center',
+         data:{
+           merchants_id: getApp().globalData.merchants_id
+         },
+         success:function(res){
+           if(res.data.code == 1){
+             that.setData({
+               avatar: res.data.data.logo_image,
+               nickname: res.data.data.name,
+             })
+           }
+         }
+       })
+    }
     wx.request({
       url: util.Baseurl + '/distribution/center',
       data: {
@@ -110,9 +124,13 @@ Page({
       },
       success: function(res) {
         if (res.data.code == 1) {
-          that.setData({
-            avatar: res.data.data.avatar,
-            nickname: res.data.data.nickname,
+          if (wx.getStorageSync('usertype') == 'customer'){
+            that.setData({
+              avatar: res.data.data.avatar,
+              nickname: res.data.data.nickname,
+            })
+          }
+          that.setData({            
             money: res.data.data.balance,
             mybrokerage: res.data.data.total_balance,
             withdraw: res.data.data.withdrawal_balance,

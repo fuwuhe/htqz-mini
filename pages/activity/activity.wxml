@@ -7,12 +7,12 @@
   <view class="displayarea">
     <view class="whiteblk">
       <view class="blocktitle">参与人数(
-        <span>{{joinnum}}</span>人)</view>
+        <span class="number">{{joinnum}}</span>人)</view>
       <view class="blklist joinlist">
         <ul>
           <li wx:for="{{joinList}}" wx:key="index">
-            <image src="{{item.avatar}}"></image>
-            <span>{{item.nickname}}</span>
+            <image src="{{item.avatar?item.avatar:'/images/default_avatar.png'}}"></image>
+            <span>{{item.nickname?item.nickname:'佚名'}}</span>
           </li>
         </ul>
       </view>
@@ -21,7 +21,7 @@
     <view class="businesstip">（排名不分先后）</view>
     <view class="whiteblk">
       <view class="blocktitle">合作商家(
-        <span>{{shopnum}}</span>家)</view>
+        <span class="number">{{shopnum}}</span>家)</view>
       <view class="blklist">
         <ul>
           <li bindtap="Click2detail" wx:for="{{shopList}}" data-id="{{item.id}}" wx:key="index">
@@ -34,7 +34,7 @@
     <view class="tip">点击商家头像查看详细信息</view>
     <view class="whiteblk" wx:if='{{recordlist}}' style="padding-bottom:20rpx;">
       <view class="blocktitle">
-        购买记录(<span>{{recordlist.length}}</span>人)
+        购买记录(<span class="number">{{recordlist.length}}</span>人)
         <view class="swiperarea" style='height:{{recordlist.length<=4?recordlist.length*130:520}}rpx'> 
           <swiper class="recordswiper" indicatordots="false" display-multiple-items='{{displaynum}}' autoplay="true" vertical="true" >
             <swiper-item wx:for="{{recordlist}}" wx:key="index">
@@ -43,11 +43,11 @@
                <view class="rightcon">
                  <view class="lineone">
                    <view class="name">{{item.name?item.name:''}}</view>
-                   <view class="price">已经支付 ￥{{item.price}}</view>
+                   <view class="price">已经支付 <span class="number">￥{{item.price}}</span></view>
                  </view>
                  <view class="linetwo">
                    <view class="theme">{{item.theme}}</view>
-                   <view class="time">{{item.time}}</view>
+                   <view class="time number">{{item.time}}</view>
                  </view>
                </view>               
              </view>
@@ -75,8 +75,8 @@
         </view>
         <view class="tbody" wx:for="{{ranklist}}" wx:key="index">
            <view class="td">{{item.nickname}}</view>
-           <view class="td">{{item.invite_num}}人</view>
-           <view class="td red">{{item.total_balance}}</view>
+           <view class="td number">{{item.invite_num}}人</view>
+           <view class="td red number">{{item.total_balance}}</view>
         </view>
       </view>
     </view>
@@ -84,7 +84,7 @@
     <view class="article">
        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
     </view>
-    <view class="phone">服务热线：400 677 6763</view>
+    <view class="phone">服务热线：<span class="number">400 677 6763</span></view>
   </view>
   <view catchtap="Clcik2buy" class='botbtn {{(giftstatus == 0 || giftstatus == null)?"":"clicked"}}'>{{(giftstatus == 0 || giftstatus == null)?"立即购买":"已购买"}}</view>
 </view>

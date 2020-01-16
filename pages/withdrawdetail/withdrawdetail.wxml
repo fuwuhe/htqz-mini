@@ -5,11 +5,11 @@
   <template wx:if="{{withdrawlist.length == 0}}" is="empty" data="{{emptyTip}}"></template> 
     <view class="withdraw" wx:for="{{withdrawlist}}" wx:key="index">
       <view class="left">
-         <view class="day">{{item.day}}</view>
-         <view class="time">{{item.time}}</view>
+         <view class="day number">{{item.day}}</view>
+         <view class="time number">{{item.time}}</view>
       </view>
       <view class="mid">{{item.towhere}}</view>
-      <view class="right">{{item.operator}}￥{{item.num}}</view>
+      <view class="right number">{{item.operator}}￥{{item.num}}</view>
     </view>
   </scroll-view>
 </view>

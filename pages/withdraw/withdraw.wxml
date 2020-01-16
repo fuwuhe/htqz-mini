@@ -14,22 +14,22 @@
   <view class="forms between" wx:if="{{!wxchecked}}">
      <view>{{bankname == ''?'选择银行卡':bankname}}</view>
      <view bindtap="Navtobanklist" class="bankinput">
-       <input disabled placeholder="" value="{{fromadd}}"></input>
+       <input class="number" disabled placeholder="" value="{{fromadd}}"></input>
        <image src="/images/right_arrow@2x.png"></image>
      </view>
   </view>
   <view class="withdrawzone">
      <view class="title">提现金额</view>
      <view class="input">
-       ￥<input type="digit" bindblur="BlurNum" bindinput="InputNum" value="{{withdrawnum}}"></input>
+       ￥<input type="digit" class="number" bindblur="BlurNum" bindinput="InputNum" value="{{withdrawnum}}"></input>
      </view>
      <view class="bot">
        <view class="left">
-         我的余额{{balance}}元,
+         我的余额<span class="number">{{balance}}</span>元,
          <text bindtap="Withdrawall">全部提现</text>
        </view>
        <view class="right">
-         最低限额{{lowest}}元
+         最低限额<span class="number">{{lowest}}</span>元
        </view>
      </view>
   </view>

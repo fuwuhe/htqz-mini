@@ -91,6 +91,16 @@ const getQueryObject =(search) => {
   return obj;
 }
 
+const FontFam = () => {
+  wx.loadFontFace({
+    family: 'PingFangSC-medium',
+    source: 'url("https://htqz.0791jr.com/uploads/20200109/1.ttf")',
+    success: function (res) {
+      
+    }
+  })
+}
+
 module.exports = {
   formatTime,
   TimeDown,
@@ -100,4 +110,5 @@ module.exports = {
   Num2time,
   getQueryObject,
   Num2daytime,
+  FontFam
 }

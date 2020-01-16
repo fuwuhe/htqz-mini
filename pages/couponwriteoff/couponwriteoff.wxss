@@ -38,8 +38,8 @@
 }
 
 .qrcodezone .code image {
-  width: 266rpx;
-  height: 266rpx;
+  width: 288rpx;
+  height: 288rpx;
 }
 
 .qrcodezone .code .cover {

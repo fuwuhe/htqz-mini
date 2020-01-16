@@ -8,15 +8,15 @@
           <view class="content">
             <view class="leftcon">
               <view class="title">{{item.title}}</view>
-              <view class="price">
+              <view class="price number">
                 ￥
                 <span>{{item.price}}</span>
               </view>
             </view>
             <view class="rightcon">还剩
-              <view class="timebox">{{item.hour}}</view>:
-              <view class="timebox">{{item.minute}}</view>:
-              <view class="timebox">{{item.second}}</view>
+              <view class="timebox number">{{item.hour}}</view>:
+              <view class="timebox number">{{item.minute}}</view>:
+              <view class="timebox number">{{item.second}}</view>
             </view>
           </view>
         </view>

@@ -12,6 +12,7 @@ Page({
     cardlist: []
   },
   onLoad: function(options) {
+    util.FontFam()
     if (options.from != undefined) {
       this.setData({
         fromwd: true

@@ -6,7 +6,7 @@
     <view class="matelist" wx:for="{{matelist}}" wx:key="index">
       <image src="{{item.avatar}}"></image>
       <text class="name">{{item.name}}</text>
-      <text class="phone">{{item.phone}}</text>
+      <text class="phone number">{{item.phone}}</text>
     </view>
   </scroll-view>
 </view>

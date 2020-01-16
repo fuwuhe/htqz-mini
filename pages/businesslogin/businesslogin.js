@@ -8,6 +8,7 @@ Page({
     password: ''
   },
   onLoad: function() {
+    util.FontFam()
     if (getApp().globalData.logindata) {
       this.setData({
         token: getApp().globalData.logindata.token

@@ -12,6 +12,7 @@ Page({
     bankid: ''
   },
   onLoad: function(options) {
+    util.FontFam()
     var that = this;
     wx.request({
       url: util.Baseurl + '/bank/withdraw_info',

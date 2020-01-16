@@ -39,7 +39,7 @@ Page({
     avatar: "/images/default_avatar.png"
   },
   onLoad: function() {
-
+    util.FontFam()
   },
   onShow: function() {
     var that = this;

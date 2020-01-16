@@ -7,7 +7,7 @@
       <view>{{username}}</view>
       <view class="phone">
         <image src="/images/my_telephone.png"></image>
-        <text style="margin-left:10rpx;" wx:if="{{phonenum!=''}}">{{phonenum}}</text>
+        <text class="number" style="margin-left:10rpx;" wx:if="{{phonenum!=''}}">{{phonenum}}</text>
         <button wx:if="{{phonenum==''}}" class="authbtn" size="default" open-type="getPhoneNumber" lang="zh_CN" bindgetphonenumber="getPhoneNumber">绑定手机号</button>
       </view>
     </view>

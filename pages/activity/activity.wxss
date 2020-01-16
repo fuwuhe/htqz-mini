@@ -102,7 +102,7 @@ page {
 
 .recordswiper .recordblk .rightcon {
   float: right;
-  width: 520rpx;
+  width: 530rpx;
 }
 
 .recordswiper .recordblk .rightcon .lineone {
@@ -118,7 +118,7 @@ page {
 .recordswiper .recordblk .rightcon .lineone .name {
   float: left;
   color: #333;
-  font-size: 28rpx;
+  font-size: 30rpx;
 }
 
 .recordswiper .recordblk .rightcon .lineone .price {

@@ -69,6 +69,7 @@ Page({
      })
   },
   onLoad: function() {
+    util.FontFam()
     var that = this;
     that.LoadList(that.data.page)
   },

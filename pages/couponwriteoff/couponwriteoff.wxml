@@ -15,19 +15,19 @@
     <view class="ball ball2"></view>
     <view class="info">
       <view class="name">订单编号</view>
-      <view class="con">{{ordercode}}</view>
+      <view class="con number">{{ordercode}}</view>
     </view>
     <view class="info">
       <view class="name">创建时间</view>
-      <view class="con">{{createtime}}</view>
+      <view class="con number">{{createtime}}</view>
     </view>
     <view class="info">
       <view class="name">支付时间</view>
-      <view class="con">{{paytime}}</view>
+      <view class="con number">{{paytime}}</view>
     </view>
     <view class="info">
       <view class="name">支付金额</view>
-      <view class="con">￥{{paynum}}</view>
+      <view class="con number">￥{{paynum}}</view>
     </view>
     <view class="info" style="margin-top:50rpx;">
       <view class="name">店铺名称</view>
@@ -35,7 +35,7 @@
     </view>
     <view class="info">
       <view class="name">核销次数</view>
-      <view class="con">{{number}}/{{totel}}</view>
+      <view class="con number">{{number}}/{{totel}}</view>
     </view>
   </view>
 </view>

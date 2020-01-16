@@ -13,6 +13,7 @@ Page({
     over:false
   },
   onLoad: function (options) {
+    util.FontFam()
     var that = this;
     wx.request({
       url: util.Baseurl + '/coupon/coupon_detail',
@@ -42,5 +43,9 @@ Page({
          over:true
        })
     }
-  }
+    
+  },
+
+
+  
 })

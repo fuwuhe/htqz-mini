@@ -3,7 +3,7 @@
   <view class="forms">
     <view class="row">
       <image style="width:30rpx;height:30rpx;" src="/images/login_number@2x.png"></image>
-      <input type="text" bindblur="Blurname" placeholder="请输入账户" value="{{loginname}}"></input>   
+      <input class="number" type="text" bindblur="Blurname" placeholder="请输入账户" value="{{loginname}}"></input>   
     </view>
     <view class="row">
       <image style="width:30rpx;height:35rpx;" src="/images/login_password@2x.png"></image>
