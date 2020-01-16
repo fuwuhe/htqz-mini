@@ -23,7 +23,7 @@ App({
                         pid: this.globalData.pid
                       },
                       header: {
-                        'content-type': 'application/json' // 默认值
+                        'content-type': 'application/json'
                       },
                       success: function(suc) {
                         if (suc.data.msg == "success") {
@@ -45,9 +45,6 @@ App({
       }
     })
   },
-  TestFun: function() {
-
-  },
   globalData: {
     userInfo: null,
     selectcard: '',
@@ -56,6 +53,8 @@ App({
     code: '',
     phonenum: '',
     pid:'',
-    mypid: ''
+    mypid: '',
+    busphonenum: ''
   }
 })
+

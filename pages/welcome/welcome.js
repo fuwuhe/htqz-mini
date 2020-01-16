@@ -10,6 +10,7 @@ Page({
     
   },
   Intoclient:function(){
+    wx.setStorageSync('usertype', 'customer')
     wx.switchTab({
       url: '/pages/index/index',
     })

@@ -41,7 +41,6 @@ Page({
     }
     if (this.data.password.length != '' && this.data.loginname.trim().length != '') {
       var that = this;
-      //18710614188
       wx.request({
         url: util.Baseurl + '/merchants/login',
         data: {
@@ -60,14 +59,16 @@ Page({
               duration: 1500
             })
           } else {
+            getApp().globalData.busphonenum = that.data.loginname;
+            wx.setStorageSync('busphonenum', that.data.loginname);
             getApp().globalData.merchants_id = suc.data.data
-            wx.navigateTo({
-              url: '/pages/businesscenter/businesscenter',
+            wx.setStorageSync('usertype', 'business')
+            wx.switchTab({
+              url: '/pages/index/index',
             })
           }
         }
       })
     }
-
   }
 })

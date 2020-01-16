@@ -33,8 +33,14 @@
       <text>已提现佣金(元)</text>
     </view>
   </view>
-  <view class="linklist">
-    <view class="link" bindtap="Selectoption" data-index="{{index}}" wx:for="{{linklist}}" wx:key="index">
+  <view class="linklist" wx:if="{{!business}}">
+    <view class="link" bindtap="Selectoption" wx:for="{{linklist1}}" wx:key="index" data-nav="{{item.nav}}">
+       <image src="{{item.src}}" class="image" style='width:{{item.width}}rpx;height:{{item.height}}rpx'></image>
+       <view>{{item.name}}</view>
+    </view>
+  </view>
+  <view class="linklist" wx:if="{{business}}">
+    <view class="link" bindtap="Selectoption"  wx:for="{{linklist2}}" wx:key="index" data-nav="{{item.nav}}">
        <image src="{{item.src}}" class="image" style='width:{{item.width}}rpx;height:{{item.height}}rpx'></image>
        <view>{{item.name}}</view>
     </view>

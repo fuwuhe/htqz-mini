@@ -38,17 +38,48 @@ Page({
     username: "用户昵称",
     avatar: "/images/default_avatar.png"
   },
-  onLoad: function() {    
+  onLoad: function() {
+
+  },
+  onShow: function() {
     var that = this;
-    app.TestFun();
-    if (app.globalData.userInfo != null && wx.getStorageSync('phonenum') != ''){
+    if (app.globalData.userInfo != null && wx.getStorageSync('busphonenum') != '' && wx.getStorageSync('usertype') == 'business') {
+      wx.request({
+        url: util.Baseurl + '/User/bind_mobile',
+        data: {
+          token: getApp().globalData.logindata.token,
+          mobile: wx.getStorageSync('busphonenum')
+        },
+        success: function(suc) {
+          if (suc.data.code == 1) {
+            if (suc.data.data.is_merchants == 0 && wx.getStorageSync('usertype') == 'business') {
+              wx.showToast({
+                title: '当前登录账号不是商家，请重新选择角色',
+                icon: 'none',
+                complete: function() {
+                  setTimeout(function() {
+                    wx.reLaunch({
+                      url: '/pages/welcome/welcome'
+                    })
+                  }, 1500)
+                }
+              })
+            }
+            if (suc.data.data.is_merchants == 1 && wx.getStorageSync('usertype') == 'business') {
+              that.setData({
+                phonenum: util.PhonenumEncrypt(wx.getStorageSync('busphonenum'))
+              })
+            }
+          }
+        }
+      })
+    }
+    if (app.globalData.userInfo != null && wx.getStorageSync('phonenum') != '' && wx.getStorageSync('usertype') == 'customer') {
       that.setData({
         phonenum: util.PhonenumEncrypt(wx.getStorageSync('phonenum'))
       })
     }
-  },
-  onShow:function(){    
-    if (app.globalData.userInfo == null){
+    if (app.globalData.userInfo == null) {
       wx.showModal({
         title: '温馨提示',
         content: '该功能需要您的授权',
@@ -64,7 +95,7 @@ Page({
           }
         }
       })
-    }else{
+    } else {
       this.setData({
         avatar: app.globalData.userInfo.avatarUrl,
         username: app.globalData.userInfo.nickName,
@@ -77,11 +108,11 @@ Page({
       url: "/" + this.data.linklist[index].url,
     })
   },
-  getPhoneNumber: function (e) {
+  getPhoneNumber: function(e) {
     var that = this;
     if (e.detail.errMsg == "getPhoneNumber:ok" && e.detail.encryptedData != undefined) {
       wx.login({
-        success:function(resp){
+        success: function(resp) {
           wx.request({
             url: util.Baseurl + '/user/getMobile',
             data: {
@@ -89,25 +120,39 @@ Page({
               encryptedData: e.detail.encryptedData,
               code: resp.code
             },
-            success: function (res) {
-              if (res.data.code == 1) {
-                if (res.data.data.phoneNumber){
+            success: function(res) {
+              if (res.data.code == 1 && typeof(res.data.data) != "number") {
+                if (res.data.data.phoneNumber) {
                   that.setData({
                     phonenum: util.PhonenumEncrypt(res.data.data.phoneNumber)
                   })
                   getApp().globalData.phonenum = res.data.data.phoneNumber;
-                  wx.setStorageSync('phonenum', res.data.data.phoneNumber)
+                  wx.setStorageSync('phonenum', res.data.data.phoneNumber);
                   wx.request({
                     url: util.Baseurl + '/User/bind_mobile',
-                    data:{
+                    data: {
                       token: getApp().globalData.logindata.token,
                       mobile: res.data.data.phoneNumber
                     },
-                    success:function(suc){
-
+                    success: function(suc) {
+                      if (suc.data.code == 1) {
+                        if (suc.data.data.is_merchants == 0 && wx.getStorageSync('usertype') == 'business') {
+                          wx.showToast({
+                            title: '当前登录账号不是商家，请重新选择角色',
+                            icon: 'none',
+                            complete: function() {
+                              setTimeout(function() {
+                                wx.reLaunch({
+                                  url: '/pages/welcome/welcome'
+                                })
+                              }, 1500)
+                            }
+                          })
+                        }
+                      }
                     }
                   })
-                }                
+                }
               } else {
                 wx.showToast({
                   title: '网络错误，请再试一次',
