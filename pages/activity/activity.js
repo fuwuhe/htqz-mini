@@ -1,7 +1,7 @@
 //logs.js
 var WxParse = require('../../wxParse/wxParse.js');
 const util = require('../../utils/util.js');
-const backgroundAudioManager = wx.getBackgroundAudioManager();
+const innerAudioContext = wx.createInnerAudioContext();
 
 Page({
   data: {
@@ -20,11 +20,11 @@ Page({
     giftstatus: 0
   },
   onReady: function() {
-    backgroundAudioManager.src = 'http://htqz.0791jr.com/uploads/1.mp3';
-    backgroundAudioManager.duration = 60
+    innerAudioContext.src = 'http://htqz.0791jr.com/uploads/1.mp3';
+    innerAudioContext.loop = true;
   },
   onLoad: function(options) {
-    backgroundAudioManager.play();
+    innerAudioContext.play();
     this.setData({
       optionsid: options.id
     })
@@ -253,16 +253,16 @@ Page({
     }
   },
   onUnload: function() {
-    backgroundAudioManager.stop();
+    innerAudioContext.stop();
   },
   Playmusic: function() {
     this.setData({
       mclass: !this.data.mclass
     })
     if (this.data.mclass) {
-      backgroundAudioManager.play();
+      innerAudioContext.play();
     } else {
-      backgroundAudioManager.pause();
+      innerAudioContext.pause();
     }
   },
   Click2recept: function(e) {
