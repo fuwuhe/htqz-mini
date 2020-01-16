@@ -239,6 +239,9 @@ Page({
                       that.setData({
                         giftstatus:1
                       })
+                      wx.navigateTo({
+                        url: '/pages/payresult/payresult',
+                      })
                     }
                   })
                 }

@@ -1,0 +1,45 @@
+/* pages/withdrawresult/withdrawresult.wxss */
+
+page {
+  background: #fff;
+}
+
+.blk {
+  width: 100%;
+}
+
+.blk image {
+  width: 150rpx;
+  height: 150rpx;
+  display: block;
+  margin: 150rpx auto 40rpx;
+}
+
+.blk .tip1 {
+  text-align: center;
+  font-size: 30rpx;
+  color: #333;
+  letter-spacing: 2rpx;
+}
+
+.blk .tip2 {
+  margin-top: 20rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #666;
+  letter-spacing: 2rpx;
+}
+
+.qrcode {
+  display: block;
+  width: 205rpx;
+  height: 207rpx;
+  margin: 150rpx auto 30rpx;
+}
+
+.tip3 {
+  text-align: center;
+  color: #333;
+  font-weight: 500;
+  font-size: 28rpx;
+}

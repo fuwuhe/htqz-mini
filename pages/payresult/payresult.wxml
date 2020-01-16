@@ -1,0 +1,11 @@
+<!--logs.wxml-->
+<view class="container">
+   <view class="blk">
+     <image src="/images/submit-pro@2x.png"></image>
+     <view class="tip1">您已成功支付 </view>
+     <view class="tip2">可在我的-我的订单中查看</view>
+   </view>
+   <view class="addbtn" style="margin: 50rpx auto" bindtap="Back2index">返回</view>
+   <image class="qrcode" src="https://htqz.0791jr.com/uploads/20200109/8.png"></image>
+   <view class="tip3">扫码关注鸿图大联盟公众号</view>
+</view>

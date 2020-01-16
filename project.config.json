@@ -48,8 +48,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/welcome/welcome",
-					"pathName": "pages/index/index",
+					"name": "pages/payresult/payresult",
+					"pathName": "pages/payresult/payresult",
 					"query": "pid=214",
 					"scene": null
 				}
