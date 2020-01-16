@@ -41,34 +41,42 @@ Page({
     }
     if (this.data.password.length != '' && this.data.loginname.trim().length != '') {
       var that = this;
-      wx.request({
-        url: util.Baseurl + '/merchants/login',
-        data: {
-          mobile: that.data.loginname,
-          password: that.data.password,
-          token: that.data.token
-        },
-        header: {
-          'content-type': 'application/json' // 默认值
-        },
-        success: function(suc) {
-          if (suc.data.code != 1) {
-            wx.showToast({
-              title: suc.data.msg,
-              icon: 'none',
-              duration: 1500
-            })
-          } else {
-            getApp().globalData.busphonenum = that.data.loginname;
-            wx.setStorageSync('busphonenum', that.data.loginname);
-            getApp().globalData.merchants_id = suc.data.data
-            wx.setStorageSync('usertype', 'business')
-            wx.switchTab({
-              url: '/pages/index/index',
-            })
+      if (!/(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/.test(this.data.loginname)) {
+        wx.showToast({
+          title: '请输入格式正确的账户名',
+          icon: 'none',
+          duration: 1000
+        })
+      } else {
+        wx.request({
+          url: util.Baseurl + '/merchants/login',
+          data: {
+            mobile: that.data.loginname,
+            password: that.data.password,
+            token: that.data.token
+          },
+          header: {
+            'content-type': 'application/json' // 默认值
+          },
+          success: function(suc) {
+            if (suc.data.code != 1) {
+              wx.showToast({
+                title: suc.data.msg,
+                icon: 'none',
+                duration: 1500
+              })
+            } else {
+              getApp().globalData.busphonenum = that.data.loginname;
+              wx.setStorageSync('busphonenum', that.data.loginname);
+              getApp().globalData.merchants_id = suc.data.data
+              wx.setStorageSync('usertype', 'business')
+              wx.switchTab({
+                url: '/pages/index/index',
+              })
+            }
           }
-        }
-      })
+        })
+      }
     }
   }
 })

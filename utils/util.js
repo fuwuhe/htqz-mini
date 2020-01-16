@@ -13,7 +13,11 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 const PhonenumEncrypt = num => {
-  return num.substr(0, 3) + '****' + num.substr(7, 11);
+  if (num.length == 11){
+    return num.substr(0, 3) + '****' + num.substr(7, 11);
+  }else{
+    return ''
+  }  
 }
 const TimeDown = (start, end) => {
   var endDate = new Date(end * 1000);

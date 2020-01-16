@@ -67,7 +67,7 @@ page{
 }
 .article image{
   display: block;
-  margin: 0 auto;
+  margin: 20rpx auto;
   width: 100%;
   height: auto;
 }

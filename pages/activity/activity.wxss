@@ -209,16 +209,17 @@ page {
 .whiteblk .ranktable .tbody {
   display: flex;
   align-items: center;
-  height: 80rpx;
   border-bottom: 2rpx solid #ededed;
   font-size: 24rpx;
 }
 
 .whiteblk .ranktable .td {
-  text-align: center;
-  line-height: 30rpx;
-  width: 210rpx;
-  display: inline-block;
+  padding: 20rpx 0;
+  line-height: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
   color: #333;
 }
 
