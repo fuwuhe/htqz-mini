@@ -6,21 +6,21 @@ Page({
     invitenum: 0,
     successnum: 0,
     active: "",
-    imagePath:"",
-    maskHidden:false,
-    qrcode:''
+    imagePath: "",
+    maskHidden: false,
+    qrcode: ''
   },
   onLoad: function() {
     util.FontFam()
     var that = this;
     wx.request({
-      url: util.Baseurl +'/coupon/coupon_detail',
-      data:{
-        type:2,
-        token:wx.getStorageSync('token')
+      url: util.Baseurl + '/coupon/coupon_detail',
+      data: {
+        type: 2,
+        token: wx.getStorageSync('token')
       },
-      success:function(res){
-        if(res.data.code == 1){
+      success: function(res) {
+        if (res.data.code == 1) {
           that.setData({
             qrcode: res.data.data.qrocde
           })
@@ -60,77 +60,77 @@ Page({
       duration: 3000
     })
     that.CreateCanvas();
-    setTimeout(function () {
+    setTimeout(function() {
       that.Closelayer()
-      wx.hideToast()      
+      wx.hideToast()
       that.setData({
         maskHidden: true
       });
     }, 3000)
   },
-  Inviteresult:function(){
+  Inviteresult: function() {
     var that = this;
     wx.request({
       url: util.Baseurl + '/distribution/popularize',
       data: {
         token: wx.getStorageSync('token')
       },
-      success: function (res) {
-        if(res.data.code == 1){
+      success: function(res) {
+        if (res.data.code == 1) {
           that.setData({
             invitenum: res.data.data.ycount,
             successnum: res.data.data.xcount,
           })
         }
-      } 
+      }
     })
   },
-  onShow:function(){
+  onShow: function() {
     this.Inviteresult()
   },
-  onShareAppMessage:function(){
+  onShareAppMessage: function() {
     this.Closelayer();
     this.Inviteresult();
-    return{
-      title:'鸿图圈子',
+    return {
+      title: '鸿图圈子',
       path: '/pages/index/index?pid=' + getApp().globalData.logindata.id,
       imageUrl: 'http://htqzqny.0791jr.com/uploads/20200109/FnpRJfCja_3FQoDcKQt97c8mz1T7.png'
     }
   },
   //canvas 生成海报
-  CreateCanvas:function(){
+  CreateCanvas: function() {
     var that = this;
     var context = wx.createCanvasContext('mycanvas');
     context.setFillStyle("#A20B0B");
     context.fillRect(0, 0, 375, 667);
     wx.getImageInfo({
       src: 'https://htqz.0791jr.com/uploads/20200109/3.png',
-      success: function (res) {
+      success: function(res) {
         context.drawImage(res.path, 0, 0, 375, 667);
         wx.getImageInfo({
           src: that.data.qrcode,
-          success: function (re) {
+          success: function(re) {
             context.drawImage(re.path, 104, 450, 167, 167);
             context.draw();
-            setTimeout(function () {
+            setTimeout(function() {
               wx.canvasToTempFilePath({
                 canvasId: 'mycanvas',
-                success: function (res) {
+                success: function(res) {
                   var tempFilePath = res.tempFilePath;
                   that.setData({
                     imagePath: tempFilePath,
                     canvasHidden: true
                   });
                 },
-                fail: function (res) {
-                  
+                fail: function(res) {
+
                 }
               });
             }, 1000);
           }
         })
-      }      
-    })         
+      }
+    })
   },
   Closelayer: function() {
     this.setData({
@@ -145,15 +145,15 @@ Page({
       }
     })
   },
-  Cancelpost:function(){
+  Cancelpost: function() {
     this.setData({
-      maskHidden:false
+      maskHidden: false
     })
   },
-  Stopprops:function(){
-   
+  Stopprops: function() {
+
   },
-  Savepost:function(){
+  Savepost: function() {
     var that = this
     wx.saveImageToPhotosAlbum({
       filePath: that.data.imagePath,
@@ -163,13 +163,14 @@ Page({
           showCancel: false,
           confirmText: '好的',
           confirmColor: '#333',
-          success: function (res) {
+          success: function(res) {
             if (res.confirm) {
               that.setData({
                 maskHidden: false
               })
             }
-          }, fail: function (res) {
+          },
+          fail: function(res) {
 
           }
         })

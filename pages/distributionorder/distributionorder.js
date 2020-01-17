@@ -16,7 +16,7 @@ Page({
        url: util.Baseurl +'/distribution/rebateOrder',
        data:{
          token: wx.getStorageSync('token'),
-         page:1,
+         page: page,
          pagesize:10
        },
        success:function(suc){
@@ -27,14 +27,7 @@ Page({
                page: page + 1
              })
            }
-           if (from == 'scroll') {
-             if (resdata.length == 0) {
-               wx.showToast({
-                 title: '暂无更多内容',
-                 icon: 'none',
-                 duration: 1000
-               })
-             }             
+           if (from == 'scroll') {                          
              if (resdata.length >= 10) {
                that.setData({
                  page: page + 1
@@ -75,6 +68,7 @@ Page({
   },
   Firstscroll:function(){
     var page = this.data.page;
+    console.log(page)
     if (page > 1) {
       this.LoadList(page, 'scroll')
     }

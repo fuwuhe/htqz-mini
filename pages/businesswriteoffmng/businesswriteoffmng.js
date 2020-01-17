@@ -107,8 +107,10 @@ Page({
                 count3: suc.data.data.pageCount,
               })
             }
+
           }
           for(var i=0;i<resdata.length;i++){
+            
             list.push({
               name: resdata[i].nickname,
               money: resdata[i].price,

@@ -75,10 +75,6 @@ Page({
       var indexlist = that.data.indexlist;
       for (var i = 0; i < indexlist.length; i++) {
         var times = util.TimeDown(indexlist[i].start, indexlist[i].end)
-        var hour = 'indexlist[' + i + '].hour';
-        var minute = 'indexlist[' + i + '].minute';
-        var second = 'indexlist[' + i + '].second';
-        var hour = 'indexlist[' + i + '].hour';
         if (times) {
           that.setData({
             ['indexlist[' + i + '].hour']: times.hours,
