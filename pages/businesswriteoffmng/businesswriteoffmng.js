@@ -13,7 +13,10 @@ Page({
     },
     firstpage:1,
     secondpage:1,
-    thirdpage:1
+    thirdpage:1,
+    count1:0,
+    count2: 0,
+    count3: 0,
   },
 
   pagechange: function(e) {
@@ -58,18 +61,20 @@ Page({
       },
       success: function(suc) {
         if(suc.data.code == 1){
-          var resdata = suc.data.data;          
+          var resdata = suc.data.data.list;          
           var list = [];
           if (status == 1) {
             list = that.data.firstList;
             if (page == 1) {
               that.setData({
-                firstpage: page + 1
+                firstpage: page + 1,
+                count1: suc.data.data.pageCount,
               })
             }
             if (resdata.length >= 10) {
               that.setData({
-                firstpage: page + 1
+                firstpage: page + 1,
+                count1: suc.data.data.pageCount,
               })
             }
           }
@@ -77,12 +82,14 @@ Page({
             list = that.data.secondList;
             if (page == 1) {
               that.setData({
-                secondpage: page + 1
+                secondpage: page + 1,
+                count2: suc.data.data.pageCount,                
               })
             }
             if (resdata.length >= 10) {
               that.setData({
-                secondpage: page + 1
+                secondpage: page + 1,
+                count2: suc.data.data.pageCount,
               })
             }
           }
@@ -90,12 +97,14 @@ Page({
             list = that.data.thirdList;
             if (page == 1) {
               that.setData({
-                thirdpage: page + 1
+                thirdpage: page + 1,
+                count3: suc.data.data.pageCount,
               })
             }
             if (resdata.length >= 10) {
               that.setData({
-                thirdpage: page + 1
+                thirdpage: page + 1,
+                count3: suc.data.data.pageCount,
               })
             }
           }

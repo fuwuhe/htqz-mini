@@ -4,15 +4,15 @@
 <view class="container">
     <view class="title">
       <view class="{{0 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='0'>
-        <text>未使用({{firstList.length}})</text>
+        <text>未使用({{count1}})</text>
         <hr class="line-style" />
       </view>
       <view class="{{1 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='1'>
-        <text>已使用({{secondList.length}})</text>
+        <text>已使用({{count2}})</text>
         <hr class="line-style" />
       </view>
       <view class="{{2 == currentIndex ? 'title-sel-selected' : 'title-sel'}}" bindtap='titleClick' data-idx='2'>
-        <text>已过期({{thirdList.length}})</text>
+        <text>已过期({{count3}})</text>
         <hr class="line-style" />
       </view>
     </view>
