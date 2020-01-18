@@ -3,7 +3,7 @@
 <!--activity.wxml-->
 <view class="container">
   <image  class='musicicon {{mclass?"animate":""}}' bindtap="Playmusic" src="/images/music@2x.png"></image>
-  <image class="banner" src="{{bannersrc}}"></image>
+  <image class="banner" src="{{bannersrc}}" mode="widthFix"></image>
   <view class="displayarea">
     <view class="whiteblk">
       <view class="blocktitle">参与人数(
