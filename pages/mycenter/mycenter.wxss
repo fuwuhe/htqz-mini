@@ -27,6 +27,11 @@ page{
   border-radius: 50%;
   margin-left:60rpx;
   margin-right: 30rpx;
+  overflow: hidden;
+}
+
+.perinfo .avatar image{
+  width: 136rpx;
 }
 .perinfo .info{
   color: #fff;

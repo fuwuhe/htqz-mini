@@ -8,7 +8,8 @@ Page({
       imgUrl: '../../images/my_order_empty@2x.png',
       font: '还没有订单哦~'
     },
-    page:1
+    page:1,
+    count: 0
   },
   Click2detail:function(e){
     wx.navigateTo({
@@ -26,17 +27,14 @@ Page({
       },
       success: function (suc) {
         if (suc.data.code == 1) {
-          var resdata = suc.data.data;
+          var resdata = suc.data.data.list;
           if (page == 1) {
             that.setData({
               page: page + 1
             })
           }
-          if (from == 'scroll') {
-            if (resdata.length == 0) {
-
-            }            
-            if (resdata.length >= 10) {
+          if (from == 'scroll') {           
+            if (resdata.length >= 0) {
               that.setData({
                 page: page + 1
               })
@@ -54,7 +52,8 @@ Page({
             })
           }
           that.setData({
-            orderlist: list
+            orderlist: list,
+            count: suc.data.data.pageCount
           })
         }
       }
@@ -66,7 +65,8 @@ Page({
   },
   Scrolltolower:function(){
     var page = this.data.page;    
-    if (page > 1) {
+    var totalpage = Math.ceil(this.data.count / 10)
+    if (page > 1 && page <= totalpage) {
       this.LoadList(page, 'scroll')
     }
   }

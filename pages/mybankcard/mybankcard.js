@@ -31,7 +31,7 @@ Page({
       data: {
         token: getApp().globalData.logindata.token,
         page: 1,
-        pagesize: 20
+        pagesize: 40
       },
       success: function (res) {
         if (res.data.code == 1) {

@@ -5,7 +5,7 @@
     <image class="line" src='../../images/{{coupen.for=="list"?"line_white.png":"line_red.png"}}'></image>
     <view class="rightcon">
       <view class="fs28">{{coupen.shopname}}</view>
-      <text class="fs28">{{coupen.values}}</text>
+      <view class="fs28 fs282">{{coupen.values}}</view>
       <!-- <view class="fs24">每<span>{{coupen.days}}</span>天激活价值<span>{{coupen.price}}</span>元观影套餐1次</view> -->
       <view class="fs24">活动主题 点击查看详情</view>
     </view>

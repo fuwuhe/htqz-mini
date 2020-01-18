@@ -37,15 +37,22 @@ Page({
       })
   },
   Firstscroll: function() {
-    this.LoadList(1, '待核销', this.data.firstpage, this)
-
+    var totalpage = Math.ceil(this.data.count1 / 10)   
+    if (this.data.firstpage > 1 && this.data.firstpage <= totalpage){
+      this.LoadList(1, '待核销', this.data.firstpage, this)
+    }
   },
   Secondscroll: function() {
-    this.LoadList(2, '已核销', this.data.secondpage, this)
- 
+    var totalpage = Math.ceil(this.data.count2 / 10)
+    if (this.data.secondpage > 1 && this.data.secondpage <= totalpage){
+      this.LoadList(2, '已核销', this.data.secondpage, this)
+    }    
   },
   Thirdscroll: function() {
-    this.LoadList(3, '已过期', this.data.thirdpage, this)
+    var totalpage = Math.ceil(this.data.count3 / 10)
+    if (this.data.thirdpage > 1 && this.data.thirdpage <= totalpage){
+      this.LoadList(3, '已过期', this.data.thirdpage, this)
+    }    
   },
   LoadList: function(status,sname,page, that) {
     wx.request({
@@ -65,13 +72,7 @@ Page({
           var list = [];
           if (status == 1) {
             list = that.data.firstList;
-            if (page == 1) {
-              that.setData({
-                firstpage: page + 1,
-                count1: suc.data.data.pageCount,
-              })
-            }
-            if (resdata.length >= 10) {
+            if (resdata.length >= 0) {
               that.setData({
                 firstpage: page + 1,
                 count1: suc.data.data.pageCount,
@@ -80,13 +81,7 @@ Page({
           }
           if (status == 2) {
             list = that.data.secondList;
-            if (page == 1) {
-              that.setData({
-                secondpage: page + 1,
-                count2: suc.data.data.pageCount,                
-              })
-            }
-            if (resdata.length >= 10) {
+            if (resdata.length >= 0) {
               that.setData({
                 secondpage: page + 1,
                 count2: suc.data.data.pageCount,
@@ -95,22 +90,15 @@ Page({
           }
           if (status == 3) {
             list = that.data.thirdList;
-            if (page == 1) {
+            if (resdata.length >= 0) {
               that.setData({
                 thirdpage: page + 1,
                 count3: suc.data.data.pageCount,
               })
             }
-            if (resdata.length >= 10) {
-              that.setData({
-                thirdpage: page + 1,
-                count3: suc.data.data.pageCount,
-              })
-            }
-
           }
           for(var i=0;i<resdata.length;i++){
-            
+
             list.push({
               name: resdata[i].nickname,
               money: resdata[i].price,

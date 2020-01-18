@@ -25,7 +25,7 @@
       <view class="blklist">
         <ul>
           <li bindtap="Click2detail" wx:for="{{shopList}}" data-id="{{item.id}}" wx:key="index">
-            <image src="{{item.logo_image}}"></image>
+            <image src="{{item.logo_image}}" mode="widthFix"></image>
             <span>{{item.name}}</span>
           </li>
         </ul>

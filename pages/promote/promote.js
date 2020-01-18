@@ -32,7 +32,6 @@ Page({
     wx.navigateTo({
       url: '/pages/activityrule/activityrule',
     })
-    this.setData
   },
   Sharenow: function() {
     this.setData({
@@ -49,7 +48,7 @@ Page({
   },
   //微信好友
   Towechatpal: function() {
-
+   
   },
   //生成海报
   Tomakepost: function() {
@@ -57,16 +56,9 @@ Page({
     wx.showToast({
       title: '生成中',
       icon: 'loading',
-      duration: 3000
+      duration: 10000
     })
     that.CreateCanvas();
-    setTimeout(function() {
-      that.Closelayer()
-      wx.hideToast()
-      that.setData({
-        maskHidden: true
-      });
-    }, 3000)
   },
   Inviteresult: function() {
     var that = this;
@@ -119,8 +111,11 @@ Page({
                   var tempFilePath = res.tempFilePath;
                   that.setData({
                     imagePath: tempFilePath,
-                    canvasHidden: true
+                    canvasHidden: true,
+                    maskHidden: true
                   });
+                  that.Closelayer()
+                  wx.hideToast()
                 },
                 fail: function(res) {
 
@@ -149,9 +144,6 @@ Page({
     this.setData({
       maskHidden: false
     })
-  },
-  Stopprops: function() {
-
   },
   Savepost: function() {
     var that = this

@@ -20,7 +20,7 @@ App({
                         code: resp.code,
                         nickname: res.userInfo.nickName,
                         avatar: res.userInfo.avatarUrl,
-                        pid: this.globalData.pid
+                        pid: this.globalData.pid || ''
                       },
                       header: {
                         'content-type': 'application/json'

@@ -49,7 +49,7 @@ Page({
                 code: res.code,
                 nickname: e.detail.userInfo.nickName,
                 avatar: e.detail.userInfo.avatarUrl,
-                pid: getApp().globalData.pid
+                pid: getApp().globalData.pid||''
               },
               header: {
                 'content-type': 'application/json' // 默认值

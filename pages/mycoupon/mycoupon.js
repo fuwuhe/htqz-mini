@@ -54,13 +54,22 @@ Page({
     })
   },
   Scrolltolower2: function() {
-    this.LoadList(this.data.token, 1, this.data.secondpage, '已使用')
+    var totalpage = Math.ceil(this.data.count2 / 10)
+    if (this.data.secondpage > 1 && this.data.secondpage <= totalpage){
+      this.LoadList(this.data.token, 1, this.data.secondpage, '已使用')
+    }   
   },
   Scrolltolower: function() {
-    this.LoadList(this.data.token, 2, this.data.firstpage, '未使用')
+    var totalpage = Math.ceil(this.data.count1 / 10)
+    if (this.data.firstpage > 1 && this.data.firstpage <= totalpage){
+      this.LoadList(this.data.token, 2, this.data.firstpage, '未使用')
+    }    
   },
   Scrolltolower3: function() {
-    this.LoadList(this.data.token, 3, this.data.thirdpage, '已过期')
+    var totalpage = Math.ceil(this.data.count3 / 10)
+    if (this.data.thirdpage > 1 && this.data.thirdpage <= totalpage){
+      this.LoadList(this.data.token, 3, this.data.thirdpage, '已过期')
+    }    
   },
   LoadList: function(token, status, page, sname) {
     var that = this;
@@ -78,12 +87,7 @@ Page({
           var list = [];
           if (status == 1) {
             list = that.data.firstList;
-            if (page == 1) {
-              that.setData({
-                firstpage: page + 1
-              })
-            }
-            if (resdata.length >= 10) {
+            if (resdata.length >= 0) {
               that.setData({
                 firstpage: page + 1
               })
@@ -91,12 +95,7 @@ Page({
           }
           if (status == 2) {
             list = that.data.secondList;
-            if (page == 1) {
-              that.setData({
-                secondpage: page + 1
-              })
-            }
-            if (resdata.length >= 10) {
+            if (resdata.length >= 0) {
               that.setData({
                 secondpage: page + 1
               })
@@ -104,12 +103,7 @@ Page({
           }
           if (status == 3) {
             list = that.data.thirdList;
-            if (page == 1) {
-              that.setData({
-                thirdpage: page + 1
-              })
-            }
-            if (resdata.length >= 10) {
+            if (resdata.length >= 0) {
               that.setData({
                 thirdpage: page + 1
               })
@@ -145,7 +139,7 @@ Page({
           }
           if (status == 3) {
             that.setData({
-              thirdpage: list,
+              thirdList: list,
               count3: res.data.data.pageCount
             })
           }

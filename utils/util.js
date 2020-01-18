@@ -48,9 +48,6 @@ const TimeDown = (start, end) => {
     }
   }
   return times;
-  setTimeout(function() {
-    TimeDown(id, endDateStr);
-  }, 1000)
 }
 const Num2date = (num) => {
   var date = new Date(num * 1000);

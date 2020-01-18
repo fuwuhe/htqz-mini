@@ -4,13 +4,14 @@
     <scroll-view scroll-y bindscrolltolower="Scrolltolower">
       <view class="ul">
         <view bindtap="Click2activity" class="li" wx:for="{{indexlist}}" data-id="{{item.id}}" wx:key="index" data-title="{{item.title}}" wx:if="{{item.now == 'no'}}">
-          <image src="{{item.img}}"></image>
+          <view class="image">
+            <image src="{{item.img}}" mode="widthFix"></image>
+          </view>
           <view class="content">
             <view class="leftcon">
               <view class="title">{{item.title}}</view>
               <view class="price number">
-                ￥
-                <span>{{item.price}}</span>
+                ￥<span>{{item.price}}</span>
               </view>
             </view>
             <view class="rightcon">还剩

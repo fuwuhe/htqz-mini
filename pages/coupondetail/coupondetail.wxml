@@ -1,13 +1,15 @@
 <!--businessdetail.wxml-->
 <import src='../../wxParse/wxParse.wxml' />
 <view class="container">
-  <view wx:if="{{bannerlist.length == 1}}" class="forbanner">
-      <image wx:for="{{bannerlist}}" wx:key="index" src="{{item.url}}"></image>
+  <view wx:if="{{bannerlist.length == 1}}" wx:for="{{bannerlist}}" wx:key="index" class="forbanner">
+      <image  mode="widthFix" src="{{item.url}}"></image>
   </view>
   <view wx:if="{{bannerlist.length > 1}}" class="forswiper">
     <swiper indicatordots="false" autoplay="true">
       <swiper-item wx:for="{{bannerlist}}" wx:key="index">
-        <image src="{{item.url}}"></image>        
+        <view class="image">
+          <image src="{{item.url}}" mode="widthFix"></image>
+        </view>       
       </swiper-item>
     </swiper>
   </view>

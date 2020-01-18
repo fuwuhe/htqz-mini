@@ -30,6 +30,14 @@
   font-size: 28rpx;
   line-height: 40rpx;
 } 
+.coupon .rightcon .fs282{
+  width: 450rpx;
+  height: 80rpx;
+  display: -webkit-box;    
+-webkit-box-orient: vertical;    
+-webkit-line-clamp: 2;    
+overflow: hidden;
+}
 .coupon .rightcon .fs24{
   color: #FFFFFF;
   font-size: 24rpx;

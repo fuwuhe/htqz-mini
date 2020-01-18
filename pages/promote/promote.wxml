@@ -62,7 +62,7 @@
   </view>
   <view class='imagePathBox' bindtap="Cancelpost" hidden="{{maskHidden == false}}">
    <view class="flexblk">
-      <image src="{{imagePath}}" catchtap="Stopprops" class='postimg'></image>
+      <image src="{{imagePath}}" class='postimg'></image>
       <view class='saveimg' catchtap='Savepost'>保存海报，分享到朋友圈</view>
    </view>
   </view>

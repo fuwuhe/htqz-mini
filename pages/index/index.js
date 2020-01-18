@@ -7,7 +7,8 @@ Page({
   data: {
     indexlist: [],
     page: 1,
-    loading: false
+    loading: false,
+    count: 0
   },
   LoadList: function(page, from) {
     var that = this;
@@ -22,17 +23,14 @@ Page({
       },
       success: function(suc) {
         if (suc.data.code == 1) {
-          var resdata = suc.data.data;
+          var resdata = suc.data.data.list;
           if (page == 1) {
             that.setData({
               page: page + 1
             })
           }
           if (from == 'scroll') {
-            if (resdata.length == 0) {
-              
-            }
-            if (resdata.length >= 10) {
+            if (resdata.length >= 0) {
               that.setData({
                 page: page + 1
               })
@@ -55,7 +53,8 @@ Page({
           }
           var list
           that.setData({
-            indexlist: list
+            indexlist: list,
+            count: suc.data.data.pageCount
           })
         }
       }
@@ -103,7 +102,7 @@ Page({
                 code: res.code,
                 nickname: getApp().globalData.userInfo.nickName,
                 avatar: getApp().globalData.userInfo.avatarUrl,
-                pid: getApp().globalData.pid
+                pid: getApp().globalData.pid || ''
               },
               header: {
                 'content-type': 'application/json' // 默认值
@@ -127,7 +126,8 @@ Page({
   },
   Scrolltolower: function() {
     var page = this.data.page;
-    if (page > 1) {
+    var totalpage = Math.ceil(this.data.count/10)
+    if (page > 1 && page <= totalpage) {
       this.LoadList(page, 'scroll')
     }
   }

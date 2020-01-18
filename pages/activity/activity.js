@@ -73,40 +73,6 @@ Page({
         }
       }
     })
-    //购买记录
-    wx.request({
-      url: util.Baseurl + '/index/buy_record',
-      data: {
-        gift_id: options.id
-      },
-      success: function(res) {
-        if (res.data.code == 1) {
-          var resdata = res.data.data.list;
-          var list = [];
-          for (var i = 0; i < resdata.length; i++) {
-            list.push({
-              recordsrc: resdata[i].avatar,
-              name: resdata[i].nickname,
-              price: resdata[i].price,
-              theme: resdata[i].title,
-              time: resdata[i].createtime,
-            })
-          }
-          if (resdata.length >= 4) {
-            that.setData({
-              displaynum: 4
-            })
-          } else {
-            that.setData({
-              displaynum: resdata.length
-            })
-          }
-          that.setData({
-            recordlist: list
-          })
-        }
-      }
-    })
     //规则
     wx.request({
       url: util.Baseurl + '/index/gift_rules',
@@ -134,8 +100,46 @@ Page({
       }
     })
   },
+  LoadShop: function() {
+    var that = this;
+    //购买记录
+    wx.request({
+      url: util.Baseurl + '/index/buy_record',
+      data: {
+        gift_id: that.data.optionsid
+      },
+      success: function (res) {
+        if (res.data.code == 1) {
+          var resdata = res.data.data.list;
+          var list = [];
+          for (var i = 0; i < resdata.length; i++) {
+            list.push({
+              recordsrc: resdata[i].avatar,
+              name: resdata[i].nickname,
+              price: resdata[i].price,
+              theme: resdata[i].title,
+              time: resdata[i].createtime,
+            })
+          }
+          if (resdata.length >= 4) {
+            that.setData({
+              displaynum: 4
+            })
+          } else {
+            that.setData({
+              displaynum: resdata.length
+            })
+          }
+          that.setData({
+            recordlist: list
+          })
+        }
+      }
+    })
+  },
   onShow: function() {
     this.Loadcoupon();
+    this.LoadShop();
   },
   Loadcoupon: function() {
     var that = this;
@@ -233,16 +237,24 @@ Page({
                     signType: resdata.signType,
                     paySign: resdata.paySign,
                     success: function(res) {
+                      console.log(res)
                       wx.showToast({
                         title: '支付成功',
                       })
                       that.Loadcoupon();
+                      that.LoadShop();
                       that.setData({
                         giftstatus:1
                       })
                       wx.navigateTo({
                         url: '/pages/payresult/payresult',
                       })
+                    },
+                    fail: function(res) {
+                      console.log(res);
+                    },
+                    complete: function(res) {
+                      console.log(res);
                     }
                   })
                 }
